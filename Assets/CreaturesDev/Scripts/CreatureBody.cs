@@ -28,6 +28,4 @@ public class CreatureBody : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
-    // add damage effect ??
 }

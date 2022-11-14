@@ -1,17 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MonsterController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private GameObject _player;
+    
+    private void Start()
     {
-        
+        _player = FindObjectOfType<PlayerTag>().gameObject;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         
     }
