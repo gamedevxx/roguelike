@@ -4,28 +4,37 @@ public class CreatureBody : MonoBehaviour
 {
     public float armor;
     
-    public float maxHealth;
+    public float maxHealth = 100;
 
     public float healthRegenerationSpeed;
 
-    private float _health;
+    public float Health { get; private set; }
+
+    private DamageReaction _damageReaction;
     
     private void Start()
     {
-        _health = maxHealth;
+        _damageReaction = GetComponent<DamageReaction>();
+        
+        Health = maxHealth;
     }
 
     private void Update()
     {
-        _health = Mathf.Min(maxHealth, _health + healthRegenerationSpeed * Time.deltaTime);
+        Health = Mathf.Min(maxHealth, Health + healthRegenerationSpeed * Time.deltaTime);
     }
 
     public void Damage(float damage) // different damage types ??
     {
-        _health -= damage * (1 - armor);
-        if (_health <= 0)
+        Health -= damage * (1 - armor);
+        if (Health <= 0)
         {
             Destroy(gameObject);
+        }
+
+        if (_damageReaction != null)
+        {
+            _damageReaction.OnDamage();
         }
     }
 }

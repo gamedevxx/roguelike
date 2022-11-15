@@ -1,16 +1,29 @@
 using UnityEngine;
 
-public class MonsterController : MonoBehaviour
+public class MonsterController : MoveController
 {
-    private GameObject _player;
+    public float viewRange;
+    public float minDistance;
     
-    private void Start()
+    private Transform _player;
+
+    protected override void Start()
     {
-        _player = FindObjectOfType<PlayerTag>().gameObject;
+        base.Start();
+        _player = FindObjectOfType<PlayerTag>().transform;
     }
 
-    private void Update()
+    protected override void SetMovementDirection()
     {
-        
+        Vector3 toPlayer = _player.position - transform.position;
+
+        if (toPlayer.sqrMagnitude < viewRange * viewRange && toPlayer.sqrMagnitude > minDistance * minDistance)
+        {
+            moveDirection = toPlayer.normalized;
+        }
+        else
+        {
+            moveDirection = Vector3.zero;
+        }
     }
 }
