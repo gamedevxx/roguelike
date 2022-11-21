@@ -20,12 +20,11 @@ public class Projectile : MonoBehaviour
         {
             return;    
         }
-        
-        CreatureBody enemyBody = col.gameObject.GetComponent<CreatureBody>();
 
-        if (enemyBody != null && enemyBody.CompareTag(enemyTag))
+        if (col.gameObject.CompareTag(enemyTag))
         {
-            enemyBody.Damage(damage);
+            DamageEnemy(gameObject);
+
             Destroy(gameObject);
             return;
         }
@@ -33,6 +32,15 @@ public class Projectile : MonoBehaviour
         if (col.gameObject.CompareTag("Env"))
         {
             Destroy(gameObject);
+        }
+    }
+
+    protected virtual void DamageEnemy(GameObject enemy)
+    {
+        CreatureBody enemyBody = enemy.GetComponent<CreatureBody>();
+        if (enemyBody != null)
+        {
+            enemyBody.Damage(damage);
         }
     }
 }

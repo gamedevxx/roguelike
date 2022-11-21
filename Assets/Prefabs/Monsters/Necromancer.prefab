@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 4465616073203722601}
   - component: {fileID: 4465616073203722603}
   - component: {fileID: 4465616073203722602}
+  - component: {fileID: 1982265728}
   m_Layer: 0
   m_Name: Necromancer
   m_TagString: Untagged
@@ -234,7 +235,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d99032a2df6a2ebaabcbaea714d05808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeout: 6
+  timeout: 2
   projectileSpawnDistance: 0.6
   spawnOffset: {x: 0, y: 0.3, z: 0}
   projectile: {fileID: 7429798720729501930, guid: 569b05737d38b834c814d6d15bd784ac, type: 3}
+--- !u!114 &1982265728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4465616073203722605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de44295479b5c97b4aeb7217b3c5523c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnZoneSize: 2
+  timeout: 6
+  minSpawnAmount: 1
+  maxSpawnAmount: 3
+  spawnedObject: {fileID: 3492782911565569523, guid: 23cda3bfb6c3d1996aba296f53c5f292, type: 3}
