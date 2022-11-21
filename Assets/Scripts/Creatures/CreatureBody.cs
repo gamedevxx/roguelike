@@ -12,7 +12,7 @@ public class CreatureBody : MonoBehaviour
 
     private DamageReaction _damageReaction;
     
-    private void Start()
+    private void Start()    
     {
         _damageReaction = GetComponent<DamageReaction>();
         

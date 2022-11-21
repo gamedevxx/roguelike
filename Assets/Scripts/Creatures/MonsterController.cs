@@ -17,13 +17,24 @@ public class MonsterController : MoveController
     {
         Vector3 toPlayer = _player.position - transform.position;
 
-        if (toPlayer.sqrMagnitude < viewRange * viewRange && toPlayer.sqrMagnitude > minDistance * minDistance)
+        if (InViewRange(toPlayer) && NotTooNear(toPlayer))
         {
             moveDirection = toPlayer.normalized;
         }
         else
         {
             moveDirection = Vector3.zero;
+            // move from player, if too near ??
         }
+    }
+
+    protected bool InViewRange(Vector3 toObject)
+    {
+        return toObject.sqrMagnitude < viewRange * viewRange;
+    }
+
+    protected bool NotTooNear(Vector3 toObject)
+    {
+        return toObject.sqrMagnitude > minDistance * minDistance;
     }
 }
