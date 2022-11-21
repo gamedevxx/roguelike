@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8075154429331334107}
   - component: {fileID: 8075154429331334106}
   - component: {fileID: 8075154429331334105}
-  - component: {fileID: 8075154429331334100}
   - component: {fileID: 8075154429331334101}
   - component: {fileID: 1719971692771376070}
+  - component: {fileID: 350320170038536127}
   m_Layer: 0
   m_Name: FreezeProjectile
   m_TagString: Untagged
@@ -108,22 +108,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8075154429331334100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8075154429331334104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df23da2c853d2ebff891b8522518534c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: {x: 1, y: 0, z: 0}
-  speed: 7
-  damage: 10
-  enemyTag: Player
 --- !u!58 &8075154429331334101
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -161,3 +145,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &350320170038536127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8075154429331334104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf8c6ac6c1a0d12ce800d94093b0f49a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: 1, y: 0, z: 0}
+  speed: 8
+  damage: 3
+  enemyTag: Player
+  effectDuration: 10
+  effectStrength: 1
+  effectType: 0

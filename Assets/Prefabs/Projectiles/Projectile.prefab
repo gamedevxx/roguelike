@@ -120,9 +120,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df23da2c853d2ebff891b8522518534c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0, y: 0, z: 0}
-  speed: 7
-  damage: 10
+  direction: {x: 1, y: 0, z: 0}
+  speed: 8
+  damage: 5
   enemyTag: Player
 --- !u!58 &1724148087843373209
 CircleCollider2D:

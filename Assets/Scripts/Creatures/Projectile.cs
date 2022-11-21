@@ -16,15 +16,14 @@ public class Projectile : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.isTrigger) // ??
+        if (col.isTrigger) // to not interact with other triggers
         {
             return;    
         }
-
+        
         if (col.gameObject.CompareTag(enemyTag))
         {
             DamageEnemy(gameObject);
-
             Destroy(gameObject);
             return;
         }

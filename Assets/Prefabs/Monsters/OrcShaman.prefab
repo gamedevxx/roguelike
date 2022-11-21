@@ -19,9 +19,10 @@ GameObject:
   - component: {fileID: 6361188190669973209}
   - component: {fileID: 6361188190669973215}
   - component: {fileID: 6361188190669973214}
+  - component: {fileID: 4163374727719521716}
   m_Layer: 0
   m_Name: OrcShaman
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -236,5 +237,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeout: 4
   projectileSpawnDistance: 0.6
+  viewRange: 7
   spawnOffset: {x: 0, y: 0.3, z: 0}
-  projectile: {fileID: 7429798720729501930, guid: 569b05737d38b834c814d6d15bd784ac, type: 3}
+  projectile: {fileID: 1724148087843373208, guid: 84332eaa51fb7f6c7adcf5b1676fe541, type: 3}
+--- !u!114 &4163374727719521716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6361188190669973213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1a6151ec322cc09784aa61270ed7d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

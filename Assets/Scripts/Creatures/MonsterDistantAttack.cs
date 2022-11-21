@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MonsterDistantAttack : MonoBehaviour
@@ -7,6 +5,8 @@ public class MonsterDistantAttack : MonoBehaviour
     public float timeout = 5;
 
     public float projectileSpawnDistance = 1;
+
+    public float viewRange = 10;
 
     public Vector3 spawnOffset;
     
@@ -24,6 +24,11 @@ public class MonsterDistantAttack : MonoBehaviour
     private void Update()
     {
         if (_lastAttackTime + timeout > Time.time)
+        {
+            return;
+        }
+
+        if ((_player.position - transform.position).sqrMagnitude > viewRange * viewRange)
         {
             return;
         }

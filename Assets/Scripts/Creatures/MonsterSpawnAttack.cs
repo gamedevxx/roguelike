@@ -11,6 +11,8 @@ public class MonsterSpawnAttack : MonoBehaviour
     public int maxSpawnAmount = 3;
 
     public GameObject spawnedObject;
+
+    public float viewRange = 10;
     
     private Transform _player;
 
@@ -26,6 +28,11 @@ public class MonsterSpawnAttack : MonoBehaviour
     void Update()
     {
         if (_lastSpawnTime + timeout > Time.time)
+        {
+            return;
+        }
+        
+        if ((_player.position - transform.position).sqrMagnitude > viewRange * viewRange)
         {
             return;
         }
