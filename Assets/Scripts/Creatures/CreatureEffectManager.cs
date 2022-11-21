@@ -9,21 +9,34 @@ public class CreatureEffectManager : MonoBehaviour
 
     public enum EffectType
     {
-        Cold,
+        Freeze,
         Damage
     }
     
     public class Effect
     {
-        public float timeLast;
-        public float effectStrength;
-        public EffectType effectType;
+        private readonly float _effectStrength;
+        private readonly EffectType _effectType;
+
+        public float TimeLast { get; set; }
+
+        public float EffectStrength
+        {
+            get => _effectStrength;
+            set => throw new NotImplementedException();
+        }
+
+        public EffectType EffectType
+        {
+            get => _effectType;
+            set => throw new NotImplementedException();
+        }
 
         public Effect(float timeLast, float effectStrength, EffectType effectType)
         {
-            this.timeLast = timeLast;
-            this.effectStrength = effectStrength;
-            this.effectType = effectType;
+            this.TimeLast = timeLast;
+            this._effectStrength = effectStrength;
+            this._effectType = effectType;
         }
     }
 
@@ -41,22 +54,22 @@ public class CreatureEffectManager : MonoBehaviour
     {
         for (int i = 0; i < _effects.Count;)
         {
-            float effectTime = Mathf.Min(Time.deltaTime, _effects[i].timeLast);
+            float effectTime = Mathf.Min(Time.deltaTime, _effects[i].TimeLast);
 
-            _effects[i].timeLast -= Time.deltaTime;
+            _effects[i].TimeLast -= Time.deltaTime;
 
-            switch (_effects[i].effectType)
+            switch (_effects[i].EffectType)
             {
-                case EffectType.Cold:
+                case EffectType.Freeze:
                     break;
                 case EffectType.Damage:
-                    _creatureBody.Damage(_effects[i].effectStrength * effectTime);
+                    _creatureBody.Damage(_effects[i].EffectStrength * effectTime);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
             
-            if (_effects[i].timeLast <= 0)
+            if (_effects[i].TimeLast <= 0)
             {
                 OnEndEffect(_effects[i]);
                 _effects.Remove(_effects[i]);
@@ -70,10 +83,10 @@ public class CreatureEffectManager : MonoBehaviour
 
     private void OnStartEffect(Effect effect)
     {
-        switch (effect.effectType)
+        switch (effect.EffectType)
         {
-            case EffectType.Cold:
-                _moveController.speed += effect.effectStrength;
+            case EffectType.Freeze:
+                _moveController.speed += effect.EffectStrength;
                 break;
             case EffectType.Damage:
                 break;
@@ -84,10 +97,10 @@ public class CreatureEffectManager : MonoBehaviour
     
     private void OnEndEffect(Effect effect)
     {
-        switch (effect.effectType)
+        switch (effect.EffectType)
         {
-            case EffectType.Cold:
-                _moveController.speed -= effect.effectStrength;
+            case EffectType.Freeze:
+                _moveController.speed -= effect.EffectStrength;
                 break;
             case EffectType.Damage:
                 break;
