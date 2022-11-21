@@ -457,7 +457,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeout: 5
-  projectileSpawnDistance: 1
+  projectileSpawnDistance: 0.6
+  spawnOffset: {x: 0, y: 0.3, z: 0}
   projectile: {fileID: 1724148087843373208, guid: 84332eaa51fb7f6c7adcf5b1676fe541, type: 3}
 --- !u!1 &1416565879
 GameObject:
@@ -4621,7 +4622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f4607f21c48b9739a67a13e42521e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 10
 --- !u!50 &7504358830135944463
 Rigidbody2D:
   serializedVersion: 4
@@ -4749,6 +4750,7 @@ GameObject:
   - component: {fileID: 635317449541803885}
   - component: {fileID: 7504358830135944469}
   - component: {fileID: 7504358830135944470}
+  - component: {fileID: 7504358830135944471}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4782,3 +4784,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeout: 0.1
   damagedColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &7504358830135944471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7504358830135944468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6e030f4d708063a7849915646c560f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -8,6 +8,8 @@ public class MonsterDistantAttack : MonoBehaviour
 
     public float projectileSpawnDistance = 1;
 
+    public Vector3 spawnOffset;
+    
     public Projectile projectile;
 
     private float _lastAttackTime;
@@ -31,7 +33,10 @@ public class MonsterDistantAttack : MonoBehaviour
 
         Vector3 toPlayer = (playerPos - pos).normalized;
 
-        Projectile spawnedProjectile = Instantiate(projectile, pos + toPlayer * projectileSpawnDistance, Quaternion.FromToRotation(Vector3.right, playerPos - pos));
+        Projectile spawnedProjectile = Instantiate(
+            projectile, 
+            pos + spawnOffset + toPlayer * projectileSpawnDistance, 
+            Quaternion.FromToRotation(Vector3.right, playerPos - pos));
 
         spawnedProjectile.direction = toPlayer.normalized;
         
