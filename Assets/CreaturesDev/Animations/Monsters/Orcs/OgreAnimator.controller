@@ -6,7 +6,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ChortAnimator
+  m_Name: OgreAnimator
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
@@ -67,7 +67,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 22b580fb4778e91a8a5704ffee29ed42, type: 2}
+  m_Motion: {fileID: 7400000, guid: 29a0b795d78221a47a9f97fa1e5e6cfd, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -93,7 +93,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 60bbfb7fba88ad4e790596217bb5eb32, type: 2}
+  m_Motion: {fileID: 7400000, guid: 076b19a0749033c44bda7dad50bd41af, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
