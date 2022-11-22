@@ -8,7 +8,7 @@ public class HealthUp : PowerUp
 
     public override void Activate(GameObject target)
     {
-        target.GetComponent<Player>().health += healthInc;
+        //target.GetComponent<Player>().health += healthInc;
     }
 
     public override void Deactivate(GameObject target) {}
