@@ -39,7 +39,7 @@ public class Experience : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         InvokeRepeating(nameof(AnimateSprite), this.animationTime, this.animationTime);
-        collision.gameObject.GetComponent<Player>().experience += 10;
+        //collision.gameObject.GetComponent<Player>().experience += 10;
         exp.SetActive(false);
     }
 }
