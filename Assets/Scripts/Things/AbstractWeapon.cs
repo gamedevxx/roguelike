@@ -1,7 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class AbstractWeapon : MonoBehaviour
-{
-    public abstract void Activate();
-    public abstract bool CanBeActivated();
+public class AbstractWeapon : BaseScriptableObj {
+
+    public virtual void Activate(GameObject target) { }
 }
