@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3354230541291744264
+--- !u!1 &1549370803404551423
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,32 +8,32 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3354230541291744316}
-  - component: {fileID: 3354230541291744317}
-  - component: {fileID: 3354230541291744258}
-  - component: {fileID: 3354230541291744259}
-  - component: {fileID: 3354230541291744256}
-  - component: {fileID: 3354230541291744257}
-  - component: {fileID: 3354230541291744262}
-  - component: {fileID: 3354230541291744263}
-  - component: {fileID: 3354230541291744260}
-  - component: {fileID: 3354230541291744261}
-  - component: {fileID: 3354230541291744266}
-  - component: {fileID: 1594181173333893590}
+  - component: {fileID: 1549370803404551409}
+  - component: {fileID: 1549370803404551422}
+  - component: {fileID: 1549370803404551411}
+  - component: {fileID: 1549370803404551408}
+  - component: {fileID: 1549370803404551410}
+  - component: {fileID: 1549370803404551412}
+  - component: {fileID: 1549370803404551413}
+  - component: {fileID: 1549370803404551415}
+  - component: {fileID: 1549370803404551414}
+  - component: {fileID: 1549370803404551400}
+  - component: {fileID: 1549370803404551401}
+  - component: {fileID: 3117465850475246998}
   m_Layer: 0
-  m_Name: Ogre
+  m_Name: BigZombie
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3354230541291744316
+--- !u!4 &1549370803404551409
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3354230541291744264}
+  m_GameObject: {fileID: 1549370803404551423}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -42,13 +42,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3354230541291744317
+--- !u!212 &1549370803404551422
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3354230541291744264}
+  m_GameObject: {fileID: 1549370803404551423}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingLayerID: -41391449
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d7f48816e593213199fe82475ffe0d1d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ee8f06ede9e0c7444bd2f77cb76a23af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -94,13 +94,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!70 &3354230541291744258
+--- !u!70 &1549370803404551411
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3354230541291744264}
+  m_GameObject: {fileID: 1549370803404551423}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -110,14 +110,14 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.1}
   m_Size: {x: 0.8, y: 0.3}
   m_Direction: 1
---- !u!50 &3354230541291744259
+--- !u!50 &1549370803404551408
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3354230541291744264}
+  m_GameObject: {fileID: 1549370803404551423}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -131,17 +131,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!95 &3354230541291744256
+--- !u!95 &1549370803404551410
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3354230541291744264}
+  m_GameObject: {fileID: 1549370803404551423}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8967fd7ccf1dea0e58928347be675e2f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6101f89bb5cd26e19b36a27bf33835d4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -151,55 +151,55 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3354230541291744257
+--- !u!114 &1549370803404551412
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3354230541291744264}
+  m_GameObject: {fileID: 1549370803404551423}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9cfa094216f7b5830b281dff671bc94c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 4
   viewRange: 7
   minDistance: 1
---- !u!114 &3354230541291744262
+--- !u!114 &1549370803404551413
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3354230541291744264}
+  m_GameObject: {fileID: 1549370803404551423}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d585e1d3b90f35abab734979b122f8a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3354230541291744263
+--- !u!114 &1549370803404551415
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3354230541291744264}
+  m_GameObject: {fileID: 1549370803404551423}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9245cce2a6fbfa69bc49f28586f5c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armor: 0.4
-  maxHealth: 60
-  healthRegenerationSpeed: 0.5
---- !u!114 &3354230541291744260
+  armor: 0.2
+  maxHealth: 100
+  healthRegenerationSpeed: 0
+--- !u!114 &1549370803404551414
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3354230541291744264}
+  m_GameObject: {fileID: 1549370803404551423}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1fc30eb173ddb366899309b195c816bb, type: 3}
@@ -207,27 +207,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeout: 0.1
   damagedColor: {r: 1, g: 0, b: 0, a: 1}
---- !u!114 &3354230541291744261
+--- !u!114 &1549370803404551400
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3354230541291744264}
+  m_GameObject: {fileID: 1549370803404551423}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 728254dc86b3355d68c5ab895e04d7aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 4.5
+  damage: 10
   attackTimeout: 1
---- !u!58 &3354230541291744266
+--- !u!58 &1549370803404551401
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3354230541291744264}
+  m_GameObject: {fileID: 1549370803404551423}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -237,13 +237,13 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.1}
   serializedVersion: 2
   m_Radius: 0.7
---- !u!114 &1594181173333893590
+--- !u!114 &3117465850475246998
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3354230541291744264}
+  m_GameObject: {fileID: 1549370803404551423}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1a6151ec322cc09784aa61270ed7d50, type: 3}

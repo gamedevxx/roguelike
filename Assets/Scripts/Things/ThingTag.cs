@@ -3,9 +3,10 @@ using UnityEngine;
 
 public class ThingTag : MonoBehaviour
 {
+    public int id;
+    
     public int Pickup()
     {
-        // TODO
-        throw new NotImplementedException();
+        return id;
     }
 }
