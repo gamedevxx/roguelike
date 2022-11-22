@@ -9,6 +9,6 @@ public class Weapon : AbstractWeapon
 
     public override void Activate(GameObject target)
     {
-        target.GetComponent<Enemy>().health -= damage;
+        //target.GetComponent<Enemy>().health -= damage;
     }
 }

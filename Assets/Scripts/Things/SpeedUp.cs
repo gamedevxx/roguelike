@@ -9,11 +9,11 @@ public class SpeedUp : PowerUp
 
     public override void Activate(GameObject target)
     {
-        target.GetComponent<Player>().speed += speeder;
+        //target.GetComponent<Player>().speed += speeder;
     }
 
     public override void Deactivate(GameObject target)
     {
-        target.GetComponent<Player>().speed -= speeder;
+        //target.GetComponent<Player>().speed -= speeder;
     }
 }

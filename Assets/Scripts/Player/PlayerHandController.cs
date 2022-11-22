@@ -37,12 +37,12 @@ public class PlayerHandController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q) && _leftHandThingId != -1)
         {
-            leftHandThing.Activate();
+            //leftHandThing.Activate();
         }
 
         if (Input.GetKeyDown(KeyCode.E) && _rightHandThingId != -1)
         {
-            rightHandThing.Activate();
+            //rightHandThing.Activate();
         }
     }
 }
