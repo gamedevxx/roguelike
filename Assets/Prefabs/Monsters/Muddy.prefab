@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 8205900349307814041}
   - component: {fileID: 8205900349307814046}
   - component: {fileID: 4837439118658685633}
+  - component: {fileID: -7807239625847047830}
   m_Layer: 0
   m_Name: Muddy
   m_TagString: Enemy
@@ -247,5 +248,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1a6151ec322cc09784aa61270ed7d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7807239625847047830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8205900349307814044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cb62413c26210101960aeaf6cc8946b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

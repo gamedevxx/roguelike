@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 3631553148253956003}
   - component: {fileID: 3631553148253956000}
   - component: {fileID: 8807417124028635376}
+  - component: {fileID: 1179086175514113631}
   m_Layer: 0
   m_Name: IceZombie
   m_TagString: Enemy
@@ -265,5 +266,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1a6151ec322cc09784aa61270ed7d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1179086175514113631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3631553148253956001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cb62413c26210101960aeaf6cc8946b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
