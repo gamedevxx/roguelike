@@ -36,7 +36,7 @@ public class ChestObj_2 : MonoBehaviour
             _spriteRenderer = GetComponent<SpriteRenderer>();
             InvokeRepeating(nameof(AnimateSprite), this.animationTime, this.animationTime);
             StartCoroutine(ShowAndHide(gameObject, delay));
-            collision.GetComponent<Player>().experience += 1000;
+            //collision.GetComponent<Player>().experience += 1000;
         }
     }
 }
