@@ -8,6 +8,8 @@ public class Room : MonoBehaviour {
     public GameObject DoorL;
     public GameObject DoorR;
 
+    public List<GameObject> roomFinishObjects;
+
     public int Xmin;
     public int Xmax;
     public int Ymin;
@@ -21,15 +23,23 @@ public class Room : MonoBehaviour {
 
     protected OnDestroyManager enemiesKilled;
 
-    public void Start() {
-        if (!noEnemies)
-    	   GenerateEnemies();
+    public void Start()
+    {
+        if (noEnemies)
+        {
+            OnRoomFinish();
+        }
+        else
+        {
+            GenerateEnemies();
+        }
     }
 
     private void GenerateEnemies() {
-    	int enemycount = Random.Range(minEnemyCnt, maxEnemyCnt);
-        enemiesKilled = new OnDestroyManager(enemycount);
-    	for (int i = 0; i < enemycount; ++i) {
+    	int enemyCount = Random.Range(minEnemyCnt, maxEnemyCnt);
+        enemiesKilled = new OnDestroyManager(enemyCount);
+    	for (int i = 0; i < enemyCount; ++i) 
+        {
     		int x = Random.Range(Xmin + 1, Xmax - 1);
     		int y = Random.Range(Ymin + 1, Ymax - 1);
     		Spawn(new Vector2(x, y));
@@ -53,30 +63,50 @@ public class Room : MonoBehaviour {
     }
 
     public void Update() {
-        if (!noEnemies && enemiesKilled.alive == 0) {
-            changeDoorsState(false);
+        if (!noEnemies && enemiesKilled is { alive: 0 }) 
+        {
+            OnRoomFinish();
+        }
+    }
+
+    protected virtual void OnRoomFinish()
+    {
+        changeDoorsState(false);
+        foreach (var obj in roomFinishObjects)
+        {
+            obj.SetActive(true);
+        }
+
+        if (enemiesKilled != null)
+        {
             enemiesKilled.alive -= 1;
         }
     }
 
-    public void OnTriggerEnter2D(Collider2D col) {
-        if (!noEnemies && !col.isTrigger && col.gameObject.GetComponent<PlayerTag>() != null && enemiesKilled.alive > 0) {
+    public void OnTriggerEnter2D(Collider2D col)
+    {
+        if (!noEnemies && !col.isTrigger && col.gameObject.GetComponent<PlayerTag>() != null && enemiesKilled.alive > 0) 
+        {
             changeDoorsState(true);
         }
     }
 
     protected void changeDoorsState(bool state) {
-        if (DoorR != null) {
-                DoorR.SetActive(state);
-            }
-            if (DoorL != null) {
-                DoorL.SetActive(state);
-            }
-            if (DoorD != null) {
-                DoorD.SetActive(state);
-            }
-            if (DoorU != null) {
-                DoorU.SetActive(state);
-            }
+        if (DoorR != null) 
+        {
+            DoorR.SetActive(state);
+        }
+        if (DoorL != null)
+        {
+            DoorL.SetActive(state);
+        }
+        if (DoorD != null) 
+        {
+            DoorD.SetActive(state);
+        }
+        if (DoorU != null) 
+        {
+            DoorU.SetActive(state);
+        }
     }
 }

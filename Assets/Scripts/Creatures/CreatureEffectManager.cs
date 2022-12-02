@@ -15,39 +15,37 @@ public class CreatureEffectManager : MonoBehaviour
     
     public class Effect
     {
-        private readonly float _effectStrength;
-        private readonly EffectType _effectType;
+        private float _effectStrength;
+        private EffectType _effectType;
 
         public float TimeLast { get; set; }
 
         public float EffectStrength
         {
             get => _effectStrength;
-            set => throw new NotImplementedException();
+            set => _effectStrength = value;
         }
 
         public EffectType EffectType
         {
             get => _effectType;
-            set => throw new NotImplementedException();
+            set => _effectType = value;
         }
 
-        public Effect(float timeLast, float effectStrength, EffectType effectType)
+        public Effect(float duration, float effectStrength, EffectType effectType)
         {
-            this.TimeLast = timeLast;
-            this._effectStrength = effectStrength;
-            this._effectType = effectType;
+            TimeLast = duration;
+            _effectStrength = effectStrength;
+            _effectType = effectType;
         }
     }
 
-    private List<Effect> _effects;
+    private List<Effect> _effects = new();
     
     private void Start()
     {
         _creatureBody = GetComponent<CreatureBody>();
         _moveController = GetComponent<MoveController>();
-
-        _effects = new List<Effect>();
     }
 
     private void Update()
@@ -75,7 +73,7 @@ public class CreatureEffectManager : MonoBehaviour
         switch (effect.EffectType)
         {
             case EffectType.Freeze:
-                _moveController.speed += effect.EffectStrength;
+                _moveController.speed -= effect.EffectStrength;
                 break;
             case EffectType.Damage:
                 break;
@@ -103,13 +101,18 @@ public class CreatureEffectManager : MonoBehaviour
         switch (effect.EffectType)
         {
             case EffectType.Freeze:
-                _moveController.speed -= effect.EffectStrength;
+                _moveController.speed += effect.EffectStrength;
                 break;
             case EffectType.Damage:
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
+    }
+
+    public CreatureBody GetCreatureBody()
+    {
+        return _creatureBody;
     }
 
     public void AddEffect(Effect effect)

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Vector3 = System.Numerics.Vector3;
 
 public class PlayerHandController : MonoBehaviour
 {
@@ -16,12 +17,12 @@ public class PlayerHandController : MonoBehaviour
         {
             if (_handThingId != -1)
             {
-                Destroy(gameObject);    
+                Destroy(handThing.gameObject);    
             }
 
             if (value != -1)
             {
-                handThing = Instantiate(_thingObjectsList.thingObjects[value], gameObject.transform, true);
+                handThing = Instantiate(_thingObjectsList.thingObjects[value], gameObject.transform);
             }
 
             _handThingId = value;
@@ -37,9 +38,12 @@ public class PlayerHandController : MonoBehaviour
     
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && _handThingId != -1)
+        if (Input.GetKeyDown(KeyCode.Q) && HandThingId != -1)
         {
-            handThing.Activate();
+            if (handThing.Activate(Vector2.up))
+            {
+                HandThingId = -1;
+            }
         }
     }
 }

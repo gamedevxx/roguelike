@@ -13,12 +13,10 @@ public class BossRoom : Room {
     	GenerateBoss();
     }
 
-    public new void Update() {
-    	if (enemiesKilled.alive == 0) {
-            changeDoorsState(false);
-            BossDefeated();
-            enemiesKilled.alive -= 1;
-        }
+    protected override void OnRoomFinish()
+    {
+	    BossDefeated();
+	    base.OnRoomFinish();
     }
 
     private void GenerateBoss() {

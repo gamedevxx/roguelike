@@ -1,16 +1,30 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChestObj_2 : MonoBehaviour
+public class Chest : MonoBehaviour
 {
     public Sprite[] animationSprites; //array of sprites
-    public float animationTime = 1.0f; //how often does it cicle to the next sprite
+    public float animationTime = 1.0f; //how often does it circle to the next sprite
 
     private SpriteRenderer _spriteRenderer;
     private int _spriteIndex;
 
+    public int generatedCount = 1;
+
+    private bool _activated;
+
     public float delay = 5.0f;
+
+    private ThingsSpawnManager _thingsSpawnManager;
+    private Animator _animator;
+
+    private void Start()
+    {
+        _thingsSpawnManager = FindObjectOfType<ThingsSpawnManager>();
+        _animator = GetComponent<Animator>();
+    }
 
     private void AnimateSprite()
     {
@@ -22,21 +36,26 @@ public class ChestObj_2 : MonoBehaviour
         _spriteRenderer.sprite = animationSprites[_spriteIndex];
     }
 
-    IEnumerator ShowAndHide(GameObject go, float delay)
+    IEnumerator Wait(float delay)
     {
-        go.SetActive(true);
         yield return new WaitForSeconds(delay);
-        go.SetActive(false);
+        _thingsSpawnManager.AssignToSpawn(transform.position, generatedCount);
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.isTrigger)
         {
+            return;
+        }
+        
+        if (collision.CompareTag("Player") && !_activated)
+        {
+            _activated = true;
             _spriteRenderer = GetComponent<SpriteRenderer>();
             InvokeRepeating(nameof(AnimateSprite), this.animationTime, this.animationTime);
-            StartCoroutine(ShowAndHide(gameObject, delay));
-            //collision.GetComponent<Player>().experience += 1000;
+            StartCoroutine(Wait(delay));
         }
     }
 }
