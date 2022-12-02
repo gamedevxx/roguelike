@@ -7,6 +7,7 @@ public class ThingTag : MonoBehaviour
     
     public int Pickup()
     {
+        Destroy(gameObject);
         return id;
     }
 }

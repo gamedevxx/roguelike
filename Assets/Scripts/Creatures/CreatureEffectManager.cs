@@ -58,16 +58,7 @@ public class CreatureEffectManager : MonoBehaviour
 
             _effects[i].TimeLast -= Time.deltaTime;
 
-            switch (_effects[i].EffectType)
-            {
-                case EffectType.Freeze:
-                    break;
-                case EffectType.Damage:
-                    _creatureBody.Damage(_effects[i].EffectStrength * effectTime);
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+            OnUpdateEffect(_effects[i], effectTime);
             
             if (_effects[i].TimeLast <= 0)
             {
@@ -77,8 +68,6 @@ public class CreatureEffectManager : MonoBehaviour
             }
             ++i;
         }
-        
-        
     }
 
     private void OnStartEffect(Effect effect)
@@ -89,6 +78,20 @@ public class CreatureEffectManager : MonoBehaviour
                 _moveController.speed += effect.EffectStrength;
                 break;
             case EffectType.Damage:
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+    }
+
+    private void OnUpdateEffect(Effect effect, float deltaTime)
+    {
+        switch (effect.EffectType)
+        {
+            case EffectType.Freeze:
+                break;
+            case EffectType.Damage:
+                _creatureBody.Damage(effect.EffectStrength * deltaTime);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();

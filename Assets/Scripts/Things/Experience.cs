@@ -6,8 +6,10 @@ public class Experience : MonoBehaviour
 {
     public GameObject exp;
 
-    public Sprite[] animationSprites; //array of sprites
-    public float animationTime = 0.2f; //how often does it cicle to the next sprite
+    public int points = 10;
+
+    public Sprite[] animationSprites; // array of sprites
+    public float animationTime = 0.2f; // how often does it circle to the next sprite
 
     private SpriteRenderer _spriteRenderer;
     private int _spriteIndex;
@@ -39,7 +41,7 @@ public class Experience : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         InvokeRepeating(nameof(AnimateSprite), this.animationTime, this.animationTime);
-        //collision.gameObject.GetComponent<Player>().experience += 10;
+        PlayerInfo.GainExperience(points);
         exp.SetActive(false);
     }
 }

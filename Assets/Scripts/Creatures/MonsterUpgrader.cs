@@ -12,7 +12,7 @@ public class MonsterUpgrader : MonoBehaviour
         _monsterMeleeAttack = GetComponent<MonsterMeleeAttack>();
         _monsterDistantAttack = GetComponent<MonsterDistantAttack>();
 
-        float k = 2 - (1.0f / PlayerInfo.level);
+        float k = 2 - (1.0f / PlayerInfo.Level);
 
         if (_creatureBody != null)
         {
