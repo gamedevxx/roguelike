@@ -20,6 +20,10 @@ GameObject:
   - component: {fileID: 3952523233021299680}
   - component: {fileID: 822019483140741147}
   - component: {fileID: 6954226624691582764}
+  - component: {fileID: 4192006218243932582}
+  - component: {fileID: 4877161715217421444}
+  - component: {fileID: 5989533033439081899}
+  - component: {fileID: 5007780400472543144}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -310,6 +314,61 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!58 &4192006218243932582
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3952523233021299683}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.15}
+  serializedVersion: 2
+  m_Radius: 2
+--- !u!114 &4877161715217421444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3952523233021299683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91366223ba8606909b364ac9a02f737b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handThing: {fileID: 0}
+--- !u!114 &5989533033439081899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3952523233021299683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10d5272f23d0409c695482ca5bc6443b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5007780400472543144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3952523233021299683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 601ef88d4b8a9c45eb5a6a4c744a1c40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thingObjects:
+  - {fileID: 2351445015921597005, guid: e425d0841beb940c18ba35e54b2ce7fb, type: 3}
 --- !u!1 &6845181611920110414
 GameObject:
   m_ObjectHideFlags: 0

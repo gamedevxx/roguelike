@@ -11,10 +11,12 @@ public class CreatureBody : MonoBehaviour
     public float Health { get; private set; }
 
     private DamageReaction _damageReaction;
+    private CreatureEffectManager _effectManager;
     
     private void Start()    
     {
         _damageReaction = GetComponent<DamageReaction>();
+        _effectManager = GetComponent<CreatureEffectManager>();
         
         Health = maxHealth;
     }
@@ -36,5 +38,10 @@ public class CreatureBody : MonoBehaviour
         {
             _damageReaction.OnDamage();
         }
+    }
+
+    public CreatureEffectManager GetEffectManager()
+    {
+        return _effectManager;
     }
 }

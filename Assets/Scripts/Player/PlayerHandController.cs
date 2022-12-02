@@ -5,44 +5,41 @@ using UnityEngine;
 
 public class PlayerHandController : MonoBehaviour
 {
-    private int _leftHandThingId = -1;
-    private int _rightHandThingId = -1;
+    private int _handThingId = -1;
 
-    public int LeftHandThingId
+    private ThingObjectsList _thingObjectsList;
+    
+    public int HandThingId
     {
-        get => _leftHandThingId;
+        get => _handThingId;
         set
         {
-            // TODO: change thing object
-            //_leftHandThingId = value;
-            throw new NotImplementedException();
+            if (_handThingId != -1)
+            {
+                Destroy(gameObject);    
+            }
+
+            if (value != -1)
+            {
+                handThing = Instantiate(_thingObjectsList.thingObjects[value], gameObject.transform, true);
+            }
+
+            _handThingId = value;
         }
     }
 
-    public int RightHandThingId
+    public AbstractWeapon handThing;
+
+    private void Start()
     {
-        get => _rightHandThingId;
-        set
-        {
-            // TODO: change thing object 
-            //_rightHandThingId = value;
-            throw new NotImplementedException();
-        }
+        _thingObjectsList = GetComponent<ThingObjectsList>();
     }
-
-    public AbstractWeapon leftHandThing;
-    public AbstractWeapon rightHandThing;
-
+    
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && _leftHandThingId != -1)
+        if (Input.GetKeyDown(KeyCode.Q) && _handThingId != -1)
         {
-            //leftHandThing.Activate();
-        }
-
-        if (Input.GetKeyDown(KeyCode.E) && _rightHandThingId != -1)
-        {
-            //rightHandThing.Activate();
+            handThing.Activate();
         }
     }
 }
