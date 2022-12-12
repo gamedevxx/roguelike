@@ -44,7 +44,6 @@ public class ThingsSpawnManager : MonoBehaviour
             if (randomValue <= 0)
             {
                 Instantiate(things[i], position, Quaternion.identity);
-                break;
             }
         }
     }

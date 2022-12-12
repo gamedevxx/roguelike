@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerThingsCollector : MonoBehaviour
 {
     private PlayerHandController _playerHandController;
+    private PlayerInventory _playerInventory;
 
     private void Start()
     {
         _playerHandController = GetComponent<PlayerHandController>();
+        _playerInventory = GetComponent<PlayerInventory>();
     }
     
     private void OnTriggerEnter2D(Collider2D col)
@@ -20,13 +22,6 @@ public class PlayerThingsCollector : MonoBehaviour
             return;
         }
 
-        if (PlayerInventory.ThingsAmount() == 0 
-            && _playerHandController.HandThingId == -1)
-        {
-            _playerHandController.HandThingId = thing.Pickup();
-            return;
-        }
-
-        PlayerInventory.Put(thing.Pickup());
+        _playerInventory.Put(thing.Pickup());      
     }
 }

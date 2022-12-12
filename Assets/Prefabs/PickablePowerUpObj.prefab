@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5376493402542932640}
   - component: {fileID: 5376493402542932641}
   - component: {fileID: 5376493402542932646}
+  - component: {fileID: 4494381068812427045}
   m_Layer: 0
   m_Name: PickablePowerUpObj
   m_TagString: Untagged
@@ -100,3 +101,16 @@ MonoBehaviour:
   duration: 5
   effectStrength: -1
   effectType: 1
+--- !u!114 &4494381068812427045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5376493402542932644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91688ba349dc45f1a9d92f90efaa9e61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 1

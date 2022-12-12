@@ -8,6 +8,7 @@ TagManager:
   - Env
   - Room
   - BossRoom
+  - UI_Slot
   layers:
   - Default
   - TransparentFX

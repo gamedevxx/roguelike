@@ -23,6 +23,18 @@ public class PlayerManager : MonoBehaviour
     {
         return _creatureBody.armor;
     }
-    
+
+    /*
+    public float GetExperience()
+    {
+
+    }
+
+    public float GetMaxExperience()
+    {
+
+    }
+    */
+
     // TODO: more functions to interact with player
 }

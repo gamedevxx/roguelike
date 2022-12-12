@@ -31,8 +31,8 @@ public class MonsterSpawnAttack : MonoBehaviour
         {
             return;
         }
-        
-        if ((_player.position - transform.position).sqrMagnitude > viewRange * viewRange)
+       
+        if (_player != null && (_player.position - transform.position).sqrMagnitude > viewRange * viewRange)
         {
             return;
         }
