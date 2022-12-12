@@ -3171,7 +3171,6 @@ MonoBehaviour:
   DoorL: {fileID: 6934684063526613595}
   DoorR: {fileID: 6934684065241356832}
   roomFinishObjects:
-  - {fileID: 0}
   - {fileID: 5216513925881950867}
   - {fileID: 7855721717754223887}
   Xmin: -6

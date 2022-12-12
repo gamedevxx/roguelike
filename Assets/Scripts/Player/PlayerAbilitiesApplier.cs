@@ -9,7 +9,7 @@ public class PlayerAbilitiesApplier : MonoBehaviour
 
     enum AbilityType
     {
-        AdditionalExp,
+        AdditionalExp, // TODO:  Add GainExperience coefficient
         SpeedUp,
         AdditionalArmor,
         ExperienceFromThings,
