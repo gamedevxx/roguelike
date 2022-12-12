@@ -21,7 +21,8 @@ GameObject:
   - component: {fileID: 1465656974235264903}
   - component: {fileID: 7623165816396457750}
   - component: {fileID: -781144119815536402}
-  m_Layer: 0
+  - component: {fileID: 963967959342495635}
+  m_Layer: 6
   m_Name: Imp
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -82,7 +83,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -41391449
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0ca5dfe7eea9f026ba458e5609b248c6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -262,3 +263,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cb62413c26210101960aeaf6cc8946b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &963967959342495635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465656974235264901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2579d8c891012472abfb07e0bb5d6a53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  experienceAmount: 6

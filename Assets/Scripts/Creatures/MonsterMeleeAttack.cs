@@ -14,6 +14,11 @@ public class MonsterMeleeAttack : MonoBehaviour
     
     private void OnTriggerStay2D(Collider2D col)
     {
+        if (col.isTrigger)
+        {
+            return;
+        }
+        
         if (_lastAttackTime + attackTimeout > Time.time)
         {
             return;

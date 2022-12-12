@@ -23,6 +23,5 @@ public class DamageReaction : MonoBehaviour
         _spriteRenderer.color = damagedColor;
         yield return new WaitForSeconds(timeout);
         _spriteRenderer.color = Color.white;
-        yield return new WaitForSeconds(timeout);
     }
 }

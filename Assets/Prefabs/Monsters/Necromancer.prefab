@@ -22,7 +22,8 @@ GameObject:
   - component: {fileID: 1982265728}
   - component: {fileID: 3186764544599860158}
   - component: {fileID: -6343491787711419994}
-  m_Layer: 0
+  - component: {fileID: -5358891827138090325}
+  m_Layer: 6
   m_Name: Necromancer
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -83,7 +84,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -41391449
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f66e8c61364375a1dba3f0a325160754, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -284,3 +285,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cb62413c26210101960aeaf6cc8946b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-5358891827138090325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4465616073203722605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2579d8c891012472abfb07e0bb5d6a53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  experienceAmount: 16

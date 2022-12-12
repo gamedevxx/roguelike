@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
@@ -37,24 +36,24 @@ public class RoomPlacer : MonoBehaviour {
     			if (spawnedRooms[x, y] != null) {
     				continue;
     			}
-    			int cntNeigbours = 0;
+    			int cntNeighbours = 0;
     			if (x > 0 && spawnedRooms[x - 1, y] != null) {
-    				cntNeigbours++;
+    				cntNeighbours++;
     			}
     			if (x < n && spawnedRooms[x + 1, y] != null) {
-    				cntNeigbours++;
+    				cntNeighbours++;
     			}
     			if (y > 0 && spawnedRooms[x, y - 1] != null) {
-    				cntNeigbours++;
+    				cntNeighbours++;
     			}
     			if (y < n && spawnedRooms[x, y + 1] != null) {
-    				cntNeigbours++;
+    				cntNeighbours++;
     			}
 
-    			if (cntNeigbours > 0 && cntNeigbours < 2 && !isBossRoom) {
+    			if (cntNeighbours > 0 && cntNeighbours < 2 && !isBossRoom) {
     				freePlaces.Add(new Vector2Int(x, y));
     			}
-    			if (cntNeigbours == 1 && isBossRoom) {
+    			if (cntNeighbours == 1 && isBossRoom) {
     				freePlaces.Add(new Vector2Int(x, y));
     			}
     		}
