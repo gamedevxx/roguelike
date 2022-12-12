@@ -4,8 +4,8 @@
 # Rider ignored files
 /contentModel.xml
 /modules.xml
+/.idea.Roguelike.iml
 /projectSettingsUpdater.xml
-/.idea.roguelike.iml
 # Editor-based HTTP Client requests
 /httpRequests/
 # Datasource local storage ignored files
