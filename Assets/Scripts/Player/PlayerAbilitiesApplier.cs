@@ -9,7 +9,35 @@ public class PlayerAbilitiesApplier : MonoBehaviour
 
     enum AbilityType
     {
-        NONE
+        AdditionalExp,
+        SpeedUp,
+        AdditionalArmor,
+        AdditionalDistanceDamage,
+        EnergyIncrease,
+        
+        Hiding,
+        Regeneration,
+        DistantAttackTimeoutDecrease,
+        EffectsImmunity,
+        MeleeDamageIncrease,
+        
+        Vampirism,
+        AllDamageIncrease,
+        Blееding, // ??
+        AngerAbility, // ??
+        AutomaticTargeting,
+        
+        AdditionalMagicalDamage,
+        ExperienceForPassedRooms,
+        DistantDamageArmor, // ??
+        DistantDamageBonus,
+        ManaRegenerationSpeedUp, // ??
+        
+        EnemiesSpeedDecreasing,
+        DistantDamageInfection,
+        FreezingEffect, // ??
+        AdditionalLife, // ??
+        MeleeDamageInfection,
     }
     
     struct Ability
@@ -29,8 +57,6 @@ public class PlayerAbilitiesApplier : MonoBehaviour
         {
             switch (ability.type)
             {
-                case AbilityType.NONE:
-                    break;
                 default:
                     throw new NotImplementedException();
             }
