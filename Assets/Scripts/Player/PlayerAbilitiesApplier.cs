@@ -12,31 +12,31 @@ public class PlayerAbilitiesApplier : MonoBehaviour
         AdditionalExp,
         SpeedUp,
         AdditionalArmor,
-        AdditionalDistanceDamage,
-        EnergyIncrease,
+        ExperienceFromThings,
+        InfinityEnergy, // SPECIAL // ??
         
-        Hiding,
+        Hiding, // SPECIAL // ??
         Regeneration,
-        DistantAttackTimeoutDecrease,
+        AdditionalHealth, // AdditionalLife ??
         EffectsImmunity,
         MeleeDamageIncrease,
         
         Vampirism,
-        AllDamageIncrease,
-        Blееding, // ??
-        AngerAbility, // ??
-        AutomaticTargeting,
+        DamageIncrease,
+        TemporaryBlееding, 
+        CriticalDamageProbability,
+        AutomaticTargeting, // SPECIAL
         
-        AdditionalMagicalDamage,
-        ExperienceForPassedRooms,
-        DistantDamageArmor, // ??
-        DistantDamageBonus,
-        ManaRegenerationSpeedUp, // ??
+        DamageTimeoutDecrease,
+        IncreasedDropLevel, // ??
+        WaterElementalForm, // SPECIAL // ??
+        DistantDamageIncrease,
+        IncreasedSightRange, // ??
         
         EnemiesSpeedDecreasing,
         DistantDamageInfection,
         FreezingEffect, // ??
-        AdditionalLife, // ??
+        EnemiesCantSpawnEnemies, // SPECIAL
         MeleeDamageInfection,
     }
     
