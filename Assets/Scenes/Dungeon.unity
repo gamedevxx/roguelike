@@ -1429,6 +1429,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc28f11a440dd3d8087ac25a8fc893f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1285199126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285199108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c90c18352b07cdd7db764bce703a6747, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxEnergy: 10
+  energyToActivate: 1
+  energyPerSecond: 3
+  energyRegenerationPerSecond: 1
+  speedUp: 6
 --- !u!1 &1308545632
 GameObject:
   m_ObjectHideFlags: 0
@@ -2145,6 +2162,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3952523233021299704, guid: 3e22b529d4573b8178def295bddcd082, type: 3}
+      propertyPath: m_SleepingMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3952523233021299705, guid: 3e22b529d4573b8178def295bddcd082, type: 3}
+      propertyPath: speed
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5007780400472543144, guid: 3e22b529d4573b8178def295bddcd082, type: 3}
       propertyPath: thingObjects.Array.size
       value: 2
@@ -2161,8 +2186,7 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 100
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3478224408678017383, guid: 3e22b529d4573b8178def295bddcd082, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e22b529d4573b8178def295bddcd082, type: 3}
 --- !u!1001 &3931699442654831576
 PrefabInstance:

@@ -1,9 +1,13 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Timeline;
 
 public class PlayerThingsCollector : MonoBehaviour
 {
+    public float pickupThingTimeout = 0.5f;
+
     private PlayerHandController _playerHandController;
     private PlayerInventory _playerInventory;
 
@@ -22,6 +26,15 @@ public class PlayerThingsCollector : MonoBehaviour
             return;
         }
 
-        _playerInventory.Put(thing.Pickup());      
+        StartCoroutine(PickupThingCoroutine(thing));
+    }
+
+    private IEnumerator PickupThingCoroutine(ThingTag thing)
+    {
+        yield return new WaitForSeconds(pickupThingTimeout);
+
+        _playerInventory.Put(thing.Pickup());
     }
 }
+
+
