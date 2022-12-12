@@ -10,7 +10,8 @@ public class CreatureEffectManager : MonoBehaviour
     public enum EffectType
     {
         Freeze,
-        Damage
+        Damage,
+        Heal
     }
     
     public class Effect
@@ -77,6 +78,8 @@ public class CreatureEffectManager : MonoBehaviour
                 break;
             case EffectType.Damage:
                 break;
+            case EffectType.Heal:
+                break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
@@ -91,6 +94,9 @@ public class CreatureEffectManager : MonoBehaviour
             case EffectType.Damage:
                 _creatureBody.Damage(effect.EffectStrength * deltaTime);
                 break;
+            case EffectType.Heal:
+                _creatureBody.Heal(effect.EffectStrength * deltaTime);
+                break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
@@ -104,6 +110,8 @@ public class CreatureEffectManager : MonoBehaviour
                 _moveController.speed += effect.EffectStrength;
                 break;
             case EffectType.Damage:
+                break;
+            case EffectType.Heal:
                 break;
             default:
                 throw new ArgumentOutOfRangeException();

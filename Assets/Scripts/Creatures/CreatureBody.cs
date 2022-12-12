@@ -30,6 +30,14 @@ public class CreatureBody : MonoBehaviour
         Health = Mathf.Min(maxHealth, Health + healthRegenerationSpeed * Time.deltaTime);
     }
 
+    public void Heal(float healing)
+    {
+        if (Health + healing < maxHealth)
+        {
+            Health += healing;
+        }
+    }
+
     public void Damage(float damage) // different damage types ??
     {
         if (damage < 0)
