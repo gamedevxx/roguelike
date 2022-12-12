@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4744eb9ebf014ec99c79586e301789d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
+  damage: 10
   timeout: 0.2
 --- !u!95 &5093069711246923800
 Animator:

@@ -154,7 +154,7 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 1
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &3952523233021299705
@@ -355,6 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d5272f23d0409c695482ca5bc6443b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupThingTimeout: 0.5
 --- !u!114 &5007780400472543144
 MonoBehaviour:
   m_ObjectHideFlags: 0

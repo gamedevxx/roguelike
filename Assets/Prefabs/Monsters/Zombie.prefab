@@ -165,8 +165,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  viewRange: 7
-  minDistance: 5
+  viewRange: 5
+  minDistance: 1
 --- !u!114 &8327942339653633557
 MonoBehaviour:
   m_ObjectHideFlags: 0
