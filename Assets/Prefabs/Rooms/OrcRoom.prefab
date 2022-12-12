@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 542790158699039117}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DoorL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 542790158784236774}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DoorU
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 542790159238887118}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DoorD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 542790160673186296}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DoorR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 5474144786808761313}
   - component: {fileID: 3879626083625571224}
   - component: {fileID: 6129235169175038315}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: OrcRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 2797369225872366679}
   - component: {fileID: 7349426574707238754}
   - component: {fileID: 850182483463872386}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: walls
   m_TagString: Env
   m_Icon: {fileID: 0}
@@ -814,7 +814,7 @@ Tilemap:
       - {fileID: 21300000, guid: 69681c43c3adbd0a99e3a35917a40e12, type: 3}
       - {fileID: 21300000, guid: ded8d291eceb9576a8e87d3230bf7400, type: 3}
       - {fileID: 21300000, guid: 30c50757da3357fd7975b404eb32bef7, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 4, y: 5, z: 0}
@@ -823,7 +823,7 @@ Tilemap:
       - {fileID: 21300000, guid: 69681c43c3adbd0a99e3a35917a40e12, type: 3}
       - {fileID: 21300000, guid: ded8d291eceb9576a8e87d3230bf7400, type: 3}
       - {fileID: 21300000, guid: 30c50757da3357fd7975b404eb32bef7, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
@@ -993,7 +993,7 @@ TilemapCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_MaximumTileChangeCount: 1000
+  m_MaximumTileChangeCount: 0
   m_ExtrusionFactor: 0.00001
 --- !u!1 &1877022678945346113
 GameObject:
@@ -1005,7 +1005,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7926867179188336418}
   - component: {fileID: 3416482107033205743}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1034,6 +1034,7 @@ Transform:
   - {fileID: 1591427259174350275}
   - {fileID: 5167517191571350847}
   - {fileID: 6526287608833266507}
+  - {fileID: 9167879010290630738}
   m_Father: {fileID: 5474144786808761313}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1061,7 +1062,7 @@ GameObject:
   - component: {fileID: 4173431856215561509}
   - component: {fileID: 8252322044585536447}
   - component: {fileID: 733497491938756561}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: walls
   m_TagString: Env
   m_Icon: {fileID: 0}
@@ -1300,7 +1301,7 @@ TilemapCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_MaximumTileChangeCount: 1000
+  m_MaximumTileChangeCount: 0
   m_ExtrusionFactor: 0.00001
 --- !u!1 &4853048794696504188
 GameObject:
@@ -1314,7 +1315,7 @@ GameObject:
   - component: {fileID: 8961907536444463153}
   - component: {fileID: 7415547528436508621}
   - component: {fileID: 4541964906871692765}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: walls
   m_TagString: Env
   m_Icon: {fileID: 0}
@@ -1553,7 +1554,7 @@ TilemapCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_MaximumTileChangeCount: 1000
+  m_MaximumTileChangeCount: 0
   m_ExtrusionFactor: 0.00001
 --- !u!1 &5097860735968596208
 GameObject:
@@ -1567,7 +1568,7 @@ GameObject:
   - component: {fileID: 1570455948172151005}
   - component: {fileID: 6030459917205935026}
   - component: {fileID: 8058877014994453740}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: walls
   m_TagString: Env
   m_Icon: {fileID: 0}
@@ -1776,7 +1777,7 @@ TilemapCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_MaximumTileChangeCount: 1000
+  m_MaximumTileChangeCount: 0
   m_ExtrusionFactor: 0.00001
 --- !u!1 &5647346243075241003
 GameObject:
@@ -1789,7 +1790,7 @@ GameObject:
   - component: {fileID: 8933518209199875120}
   - component: {fileID: 2636131132298390976}
   - component: {fileID: 5757453357410775842}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3157,7 +3158,7 @@ Tilemap:
       - {fileID: 21300000, guid: 42d8c6303421c3a62bbe245b17b7920a, type: 3}
       - {fileID: 21300000, guid: df7cb47cd5b7f6d49b216dfe1ce0fc40, type: 3}
       - {fileID: 21300000, guid: a85522d90e061aba7bcedb4f7ad48788, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 4, y: 4, z: 0}
@@ -3326,7 +3327,7 @@ GameObject:
   - component: {fileID: 174736738884969842}
   - component: {fileID: 4790559671153499196}
   - component: {fileID: 8800137838860783719}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: walls
   m_TagString: Env
   m_Icon: {fileID: 0}
@@ -3535,7 +3536,7 @@ TilemapCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_MaximumTileChangeCount: 1000
+  m_MaximumTileChangeCount: 0
   m_ExtrusionFactor: 0.00001
 --- !u!1001 &781844585137896491
 PrefabInstance:
@@ -3547,6 +3548,10 @@ PrefabInstance:
     - target: {fileID: 401761651089783035, guid: ab991151cb98948b88d3590f2364c731, type: 3}
       propertyPath: m_Name
       value: WallLightSource
+      objectReference: {fileID: 0}
+    - target: {fileID: 401761651089783035, guid: ab991151cb98948b88d3590f2364c731, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 401761651089783035, guid: ab991151cb98948b88d3590f2364c731, type: 3}
       propertyPath: m_IsActive
@@ -3613,6 +3618,10 @@ PrefabInstance:
     - target: {fileID: 401761651089783035, guid: ab991151cb98948b88d3590f2364c731, type: 3}
       propertyPath: m_Name
       value: WallLightSource (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 401761651089783035, guid: ab991151cb98948b88d3590f2364c731, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7278540454760292121, guid: ab991151cb98948b88d3590f2364c731, type: 3}
       propertyPath: m_RootOrder
@@ -3721,6 +3730,10 @@ PrefabInstance:
       value: Chest
       objectReference: {fileID: 0}
     - target: {fileID: 3064884719962125530, guid: 1108c5f91afd64702b9e7554711161c8, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064884719962125530, guid: 1108c5f91afd64702b9e7554711161c8, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -3746,6 +3759,10 @@ PrefabInstance:
     - target: {fileID: 401761651089783035, guid: ab991151cb98948b88d3590f2364c731, type: 3}
       propertyPath: m_Name
       value: WallLightSource (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 401761651089783035, guid: ab991151cb98948b88d3590f2364c731, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7278540454760292121, guid: ab991151cb98948b88d3590f2364c731, type: 3}
       propertyPath: m_RootOrder
@@ -3809,6 +3826,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallLightSource (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 401761651089783035, guid: ab991151cb98948b88d3590f2364c731, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7278540454760292121, guid: ab991151cb98948b88d3590f2364c731, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -3859,4 +3880,66 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7278540454760292121, guid: ab991151cb98948b88d3590f2364c731, type: 3}
   m_PrefabInstance: {fileID: 8293224042999706330}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8597698437763697542
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7926867179188336418}
+    m_Modifications:
+    - target: {fileID: 606842800611527636, guid: e1efa7d8b3f5501b0b413bcb2120d8a7, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 606842800611527636, guid: e1efa7d8b3f5501b0b413bcb2120d8a7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 606842800611527636, guid: e1efa7d8b3f5501b0b413bcb2120d8a7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 606842800611527636, guid: e1efa7d8b3f5501b0b413bcb2120d8a7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 606842800611527636, guid: e1efa7d8b3f5501b0b413bcb2120d8a7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 606842800611527636, guid: e1efa7d8b3f5501b0b413bcb2120d8a7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 606842800611527636, guid: e1efa7d8b3f5501b0b413bcb2120d8a7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 606842800611527636, guid: e1efa7d8b3f5501b0b413bcb2120d8a7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 606842800611527636, guid: e1efa7d8b3f5501b0b413bcb2120d8a7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 606842800611527636, guid: e1efa7d8b3f5501b0b413bcb2120d8a7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 606842800611527636, guid: e1efa7d8b3f5501b0b413bcb2120d8a7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8189119770766797462, guid: e1efa7d8b3f5501b0b413bcb2120d8a7, type: 3}
+      propertyPath: m_Name
+      value: MonsterWalls
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e1efa7d8b3f5501b0b413bcb2120d8a7, type: 3}
+--- !u!4 &9167879010290630738 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 606842800611527636, guid: e1efa7d8b3f5501b0b413bcb2120d8a7, type: 3}
+  m_PrefabInstance: {fileID: 8597698437763697542}
   m_PrefabAsset: {fileID: 0}

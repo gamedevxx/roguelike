@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 305885912849610325}
   - component: {fileID: 8054897958753104903}
   - component: {fileID: 1109634676816080862}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OrcWarrior
   m_TagString: Enemy
   m_Icon: {fileID: 0}

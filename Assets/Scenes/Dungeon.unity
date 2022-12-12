@@ -210,8 +210,8 @@ MonoBehaviour:
   - {fileID: 3935640602750904009, guid: 3692a8858ac1630229b1dd6b0a4f13fc, type: 3}
   - {fileID: 3935640602750904009, guid: 30ab61344b5c644d682064d569823959, type: 3}
   startingRoom: {fileID: 6934684065399505241, guid: cbd3102b3818448f88bcbbeb3c2cd313, type: 3}
-  n: 11
-  levelSize: 20
+  n: 4
+  levelSize: 7
 --- !u!4 &948325191
 Transform:
   m_ObjectHideFlags: 0
@@ -316,7 +316,7 @@ PrefabInstance:
       objectReference: {fileID: 2351445015921597005, guid: e425d0841beb940c18ba35e54b2ce7fb, type: 3}
     - target: {fileID: 6210430567740928410, guid: 3e22b529d4573b8178def295bddcd082, type: 3}
       propertyPath: maxHealth
-      value: 10000
+      value: 300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e22b529d4573b8178def295bddcd082, type: 3}

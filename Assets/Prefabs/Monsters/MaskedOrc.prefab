@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 5810732811527977844}
   - component: {fileID: 6856343831782055353}
   - component: {fileID: -5748599621847342794}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MaskedOrc
   m_TagString: Enemy
   m_Icon: {fileID: 0}

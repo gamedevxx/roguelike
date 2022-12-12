@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 8807417124028635376}
   - component: {fileID: 1179086175514113631}
   - component: {fileID: 6620388890342060089}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IceZombie
   m_TagString: Enemy
   m_Icon: {fileID: 0}

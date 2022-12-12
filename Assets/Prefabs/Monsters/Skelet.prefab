@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 8255100897694123864}
   - component: {fileID: -5987348029410152365}
   - component: {fileID: 1700607953602470506}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Skelet
   m_TagString: Enemy
   m_Icon: {fileID: 0}

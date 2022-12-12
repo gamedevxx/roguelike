@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 3117465850475246998}
   - component: {fileID: 6252138251562094074}
   - component: {fileID: -3402440411316577546}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BigZombie
   m_TagString: Enemy
   m_Icon: {fileID: 0}

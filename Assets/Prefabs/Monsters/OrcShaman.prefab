@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 4163374727719521716}
   - component: {fileID: -5158449173518709031}
   - component: {fileID: -2999373833928079585}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OrcShaman
   m_TagString: Enemy
   m_Icon: {fileID: 0}

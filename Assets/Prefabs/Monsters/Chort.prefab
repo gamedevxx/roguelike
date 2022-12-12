@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 4869650052224347884}
   - component: {fileID: -7386330492747586045}
   - component: {fileID: 2194566961859652765}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Chort
   m_TagString: Enemy
   m_Icon: {fileID: 0}

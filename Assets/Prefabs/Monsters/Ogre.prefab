@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 1594181173333893590}
   - component: {fileID: -4156811637240451397}
   - component: {fileID: 6905310229861129766}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ogre
   m_TagString: Enemy
   m_Icon: {fileID: 0}

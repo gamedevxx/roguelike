@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 1946323891322318755}
   - component: {fileID: 2964787712369626157}
   - component: {fileID: 8438777271508658464}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wogol
   m_TagString: Enemy
   m_Icon: {fileID: 0}

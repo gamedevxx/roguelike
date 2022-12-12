@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 4837439118658685633}
   - component: {fileID: -7807239625847047830}
   - component: {fileID: 6658743490960089275}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Muddy
   m_TagString: Enemy
   m_Icon: {fileID: 0}

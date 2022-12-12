@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8075154429331334101}
   - component: {fileID: 1719971692771376070}
   - component: {fileID: 350320170038536127}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FreezeProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

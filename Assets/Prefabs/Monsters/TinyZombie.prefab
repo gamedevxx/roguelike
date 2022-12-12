@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 8859212139188941042}
   - component: {fileID: -4794744431597887168}
   - component: {fileID: -2440126729160562852}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TinyZombie
   m_TagString: Enemy
   m_Icon: {fileID: 0}

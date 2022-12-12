@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 5182854231944654055}
   - component: {fileID: -4139419719440695143}
   - component: {fileID: -5133298169034663316}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Swampy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
