@@ -38,6 +38,11 @@ public class CreatureBody : MonoBehaviour
         }
     }
 
+    public void Regenerate(float regeneration)
+    {
+        healthRegenerationSpeed += regeneration;
+    }
+
     public void Damage(float damage) // different damage types ??
     {
         if (damage < 0)

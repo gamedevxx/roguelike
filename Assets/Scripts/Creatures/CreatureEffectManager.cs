@@ -11,7 +11,8 @@ public class CreatureEffectManager : MonoBehaviour
     {
         Freeze,
         Damage,
-        Heal
+        Heal,
+        Regeneration
     }
     
     public class Effect
@@ -80,6 +81,9 @@ public class CreatureEffectManager : MonoBehaviour
                 break;
             case EffectType.Heal:
                 break;
+            case EffectType.Regeneration:
+                _creatureBody.Regenerate(effect.EffectStrength);
+                break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
@@ -97,6 +101,8 @@ public class CreatureEffectManager : MonoBehaviour
             case EffectType.Heal:
                 _creatureBody.Heal(effect.EffectStrength * deltaTime);
                 break;
+            case EffectType.Regeneration:
+                break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
@@ -112,6 +118,9 @@ public class CreatureEffectManager : MonoBehaviour
             case EffectType.Damage:
                 break;
             case EffectType.Heal:
+                break;
+            case EffectType.Regeneration:
+                _creatureBody.Regenerate(-effect.EffectStrength);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
