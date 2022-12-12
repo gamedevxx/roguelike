@@ -202,9 +202,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomPrefabs:
-  - {fileID: 6934684065399505241, guid: cbd3102b3818448f88bcbbeb3c2cd313, type: 3}
+  - {fileID: 3879626083625571224, guid: d43474fa843f8c42f9f8362579bb278c, type: 3}
+  - {fileID: 3879626083625571224, guid: 822f040de8a760bc39a3e8a6aec850c6, type: 3}
+  - {fileID: 3879626083625571224, guid: a7993b7f1db7691e4bfdd80f0e2dd8b2, type: 3}
   bossRoomPrefabs:
   - {fileID: 3935640602750904009, guid: 532865b21b79d4c1f9474df23e5ab0f4, type: 3}
+  - {fileID: 3935640602750904009, guid: 3692a8858ac1630229b1dd6b0a4f13fc, type: 3}
+  - {fileID: 3935640602750904009, guid: 30ab61344b5c644d682064d569823959, type: 3}
   startingRoom: {fileID: 6934684065399505241, guid: cbd3102b3818448f88bcbbeb3c2cd313, type: 3}
   n: 11
   levelSize: 20
@@ -309,7 +313,7 @@ PrefabInstance:
     - target: {fileID: 5007780400472543144, guid: 3e22b529d4573b8178def295bddcd082, type: 3}
       propertyPath: thingObjects.Array.data[0]
       value: 
-      objectReference: {fileID: 5376493402542932646, guid: 36deee972c014bfd0826dde112448a5f, type: 3}
+      objectReference: {fileID: 2351445015921597005, guid: e425d0841beb940c18ba35e54b2ce7fb, type: 3}
     - target: {fileID: 6210430567740928410, guid: 3e22b529d4573b8178def295bddcd082, type: 3}
       propertyPath: maxHealth
       value: 10000
