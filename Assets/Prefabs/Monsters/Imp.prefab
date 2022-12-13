@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 7623165816396457750}
   - component: {fileID: -781144119815536402}
   - component: {fileID: 963967959342495635}
+  - component: {fileID: -5150326763269350406}
   m_Layer: 6
   m_Name: Imp
   m_TagString: Enemy
@@ -195,6 +196,7 @@ MonoBehaviour:
   armor: 0.1
   maxHealth: 16
   healthRegenerationSpeed: 0
+  changeHealthImmunityProbability: 0
 --- !u!114 &1465656974235264921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,6 +253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1a6151ec322cc09784aa61270ed7d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effectsCanBeApplied: 1
+  immunityProbability: 0
 --- !u!114 &-781144119815536402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,3 +280,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   experienceAmount: 6
+--- !u!114 &-5150326763269350406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465656974235264901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 253a26824b3d2f82a845f4dbb7191443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 1
+  probability: 0.01
+  thingType: 1

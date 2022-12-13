@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 699590990807564152}
   - component: {fileID: -2316932191766681717}
   - component: {fileID: -1813190273337723892}
+  - component: {fileID: 2916188169515716398}
   m_Layer: 6
   m_Name: Zombie
   m_TagString: Enemy
@@ -195,6 +196,7 @@ MonoBehaviour:
   armor: 0.1
   maxHealth: 30
   healthRegenerationSpeed: 0
+  changeHealthImmunityProbability: 0
 --- !u!114 &8327942339653633559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,6 +253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1a6151ec322cc09784aa61270ed7d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effectsCanBeApplied: 1
+  immunityProbability: 0
 --- !u!114 &-2316932191766681717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,3 +280,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   experienceAmount: 10
+--- !u!114 &2916188169515716398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8327942339653633563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 253a26824b3d2f82a845f4dbb7191443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 1
+  probability: 0.05
+  thingType: 1

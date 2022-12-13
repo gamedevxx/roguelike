@@ -204,6 +204,7 @@ MonoBehaviour:
   armor: 0
   maxHealth: 100
   healthRegenerationSpeed: 0
+  changeHealthImmunityProbability: 0
 --- !u!114 &8422622940330034600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,6 +217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1a6151ec322cc09784aa61270ed7d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effectsCanBeApplied: 1
+  immunityProbability: 0
 --- !u!114 &-2241195862869157520
 MonoBehaviour:
   m_ObjectHideFlags: 0

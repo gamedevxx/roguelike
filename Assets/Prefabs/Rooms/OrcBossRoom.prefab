@@ -604,7 +604,7 @@ Tilemap:
       - {fileID: 21300000, guid: 727d97708411f77a48b8ebcb14cf1e6f, type: 3}
       - {fileID: 21300000, guid: 55dc8ef31be6240669f2ce82ebdd611d, type: 3}
       - {fileID: 21300000, guid: ca02de8a6e4e9abda94f47297c038e5f, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
@@ -2567,7 +2567,7 @@ MonoBehaviour:
   m_Intensity: 0.6
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000a76a88fd
+  m_ApplyToSortingLayers: 00000000a76a88fdb738483909edf6ee
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -3179,6 +3179,9 @@ MonoBehaviour:
   - {fileID: 8860558034234527429}
   - {fileID: 6618735912961033458}
   - {fileID: 4755634068587476657}
+  roomFinishObjectsProbabilities:
+  - 0.7
+  - 0.7
   Xmin: -6
   Xmax: 6
   Ymin: -5
@@ -3826,7 +3829,7 @@ Tilemap:
       - {fileID: 21300000, guid: 727d97708411f77a48b8ebcb14cf1e6f, type: 3}
       - {fileID: 21300000, guid: 55dc8ef31be6240669f2ce82ebdd611d, type: 3}
       - {fileID: 21300000, guid: ca02de8a6e4e9abda94f47297c038e5f, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:

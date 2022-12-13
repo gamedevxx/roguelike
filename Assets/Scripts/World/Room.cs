@@ -11,6 +11,8 @@ public class Room : MonoBehaviour {
     public List<GameObject> roomFinishObjects;
     public List<GameObject> roomOnPlayerEnterObjects;
 
+    public List<float> roomFinishObjectsProbabilities;
+
     public int Xmin;
     public int Xmax;
     public int Ymin;
@@ -24,15 +26,13 @@ public class Room : MonoBehaviour {
 
     protected OnDestroyManager enemiesKilled;
 
+    private bool _roomActivated = false;
+    
     public void Start()
     {
         if (noEnemies)
         {
             OnRoomFinish();
-        }
-        else
-        {
-            GenerateEnemies();
         }
     }
 
@@ -64,7 +64,7 @@ public class Room : MonoBehaviour {
     }
 
     public void Update() {
-        if (!noEnemies && enemiesKilled is { alive: 0 }) 
+        if (!noEnemies && _roomActivated && enemiesKilled is { alive: 0 }) 
         {
             OnRoomFinish();
         }
@@ -72,10 +72,13 @@ public class Room : MonoBehaviour {
 
     protected virtual void OnRoomFinish()
     {
-        changeDoorsState(false);
-        foreach (var obj in roomFinishObjects)
+        ChangeDoorsState(false);
+        for (int i = 0; i < roomFinishObjects.Count; ++i)
         {
-            obj.SetActive(true);
+            if (Random.value <= roomFinishObjectsProbabilities[i])
+            {
+                roomFinishObjects[i].SetActive(true);
+            }
         }
 
         if (enemiesKilled != null)
@@ -86,17 +89,28 @@ public class Room : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D col)
     {
-        if (!noEnemies && !col.isTrigger && col.gameObject.GetComponent<PlayerTag>() != null && enemiesKilled.alive > 0) 
+        if (!noEnemies
+            && !_roomActivated
+            && !col.isTrigger 
+            && col.gameObject.GetComponent<PlayerTag>() != null 
+            && (enemiesKilled is null || enemiesKilled.alive > 0))
         {
-            foreach(var v in roomOnPlayerEnterObjects)
-            {
-                v.SetActive(true);
-            }
-            changeDoorsState(true);
+            ActivateRoom();
         }
     }
 
-    protected void changeDoorsState(bool state) {
+    protected virtual void ActivateRoom()
+    {
+        foreach(var v in roomOnPlayerEnterObjects)
+        {
+            v.SetActive(true);
+        }
+        GenerateEnemies();
+        ChangeDoorsState(true);
+        _roomActivated = true;
+    }
+
+    protected void ChangeDoorsState(bool state) {
         if (DoorR != null) 
         {
             DoorR.SetActive(state);

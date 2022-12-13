@@ -188,6 +188,8 @@ MonoBehaviour:
   - {fileID: 2821360498871435997}
   - {fileID: 4180398104967836841}
   - {fileID: 3788306954212722613}
+  roomFinishObjectsProbabilities:
+  - 0.4
   Xmin: -6
   Xmax: 6
   Ymin: -5
@@ -1358,7 +1360,7 @@ MonoBehaviour:
   m_Intensity: 0.6
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000a76a88fd
+  m_ApplyToSortingLayers: 00000000a76a88fdb738483909edf6ee
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0

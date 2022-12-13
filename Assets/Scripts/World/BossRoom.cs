@@ -8,11 +8,6 @@ public class BossRoom : Room {
 	public List<GameObject> bosses;
     public List<float> bossesProbabilities;
 
-    public new void Start() {
-    	base.Start();
-    	GenerateBoss();
-    }
-
     protected override void OnRoomFinish()
     {
 	    BossDefeated();
@@ -36,7 +31,13 @@ public class BossRoom : Room {
         }
     }
 
-	public void BossDefeated() {
+    protected override void ActivateRoom()
+    {
+	    base.ActivateRoom();
+	    GenerateBoss();
+    }
+
+    public void BossDefeated() {
 		ladder.SetActive(true);
 	}
 }

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 1946323891322318755}
   - component: {fileID: 2964787712369626157}
   - component: {fileID: 8438777271508658464}
+  - component: {fileID: -8044263307571095407}
   m_Layer: 6
   m_Name: Wogol
   m_TagString: Enemy
@@ -195,6 +196,7 @@ MonoBehaviour:
   armor: 0.6
   maxHealth: 30
   healthRegenerationSpeed: 0
+  changeHealthImmunityProbability: 0
 --- !u!114 &1212807233375925224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,6 +256,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1a6151ec322cc09784aa61270ed7d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effectsCanBeApplied: 1
+  immunityProbability: 0
 --- !u!114 &2964787712369626157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,3 +283,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   experienceAmount: 12
+--- !u!114 &-8044263307571095407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212807233375925228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 253a26824b3d2f82a845f4dbb7191443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 1
+  probability: 0.1
+  thingType: 1

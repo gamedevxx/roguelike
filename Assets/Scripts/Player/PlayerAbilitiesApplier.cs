@@ -7,15 +7,15 @@ public class PlayerAbilitiesApplier : MonoBehaviour
 {
     enum AbilityType
     {
-        AdditionalExp, // TODO:  Add GainExperience coefficient
+        AdditionalExp,
         SpeedUp,
         AdditionalArmor,
         ExperienceFromThings,
-        FreeEnergyAbilityActivation, // SPECIAL // ??
+        FreeEnergyAbilityActivation,
         
-        TemporaryPlayerArmor, // SPECIAL // ??
+        TemporaryPlayerArmor,
         Regeneration,
-        AdditionalHealth, // AdditionalLife ??
+        AdditionalHealth,
         EffectsImmunity,
         MeleeDamageIncrease,
         
@@ -23,18 +23,18 @@ public class PlayerAbilitiesApplier : MonoBehaviour
         DamageIncrease,
         TemporaryBlееding, 
         CriticalDamageProbability,
-        CriticalDamageCoefficientIncrease, // SPECIAL
+        CriticalDamageCoefficientIncrease,
         
         DamageTimeoutDecrease,
-        ChangeHealthImmunityProbability, // ??
-        EffectImmunityProbability, // SPECIAL // ??
+        ChangeHealthImmunityProbability,
+        EffectImmunityProbability,
         DistantDamageIncrease,
-        IncreasedSightRange, // ??
+        IncreasedSightRange,
         
         MakeEnemiesSlower,
         EnemyArmorDecrease,
-        EnemiesCompleteFreezing, // ??
-        EnemiesCantSpawnEnemies, // SPECIAL
+        EnemiesCompleteFreezing,
+        EnemiesCantSpawnEnemies,
         DamageInfection,
     }
     
@@ -44,12 +44,6 @@ public class PlayerAbilitiesApplier : MonoBehaviour
     private PlayerEnergy _playerEnergy;
     private PlayerWeaponEnchanter _playerWeaponEnchanter;
     private Light2D _light2D;
-
-    struct Ability
-    {
-        public AbilityType type;
-        public float strength;
-    }
 
     private void Awake()
     {
@@ -64,7 +58,7 @@ public class PlayerAbilitiesApplier : MonoBehaviour
 
         foreach (var ability in abilities)
         {
-            switch (ability.type)
+            switch (ability)
             {
                 ///////
                 
@@ -191,7 +185,7 @@ public class PlayerAbilitiesApplier : MonoBehaviour
         }
     }
     
-    private List<Ability> GetAbilities()
+    private List<AbilityType> GetAbilities()
     {
         throw new NotImplementedException();
     }

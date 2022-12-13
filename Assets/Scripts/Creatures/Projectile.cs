@@ -20,10 +20,10 @@ public class Projectile : MonoBehaviour
         {
             return;    
         }
-        
+
         if (col.gameObject.CompareTag(enemyTag))
         {
-            DamageEnemy(gameObject);
+            DamageEnemy(col.gameObject);
             Destroy(gameObject);
             return;
         }

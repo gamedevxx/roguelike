@@ -47,7 +47,7 @@ public class CreatureBody : MonoBehaviour
             return;
         }
         
-        if (damage < 0)
+        if (damage <= 0)
         {
             Health -= damage;
             return;

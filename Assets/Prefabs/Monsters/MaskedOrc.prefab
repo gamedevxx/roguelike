@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 5810732811527977844}
   - component: {fileID: 6856343831782055353}
   - component: {fileID: -5748599621847342794}
+  - component: {fileID: -5713933878105249420}
   m_Layer: 6
   m_Name: MaskedOrc
   m_TagString: Enemy
@@ -195,6 +196,7 @@ MonoBehaviour:
   armor: 0.4
   maxHealth: 24
   healthRegenerationSpeed: 0
+  changeHealthImmunityProbability: 0
 --- !u!114 &8929512481293434391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,6 +253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1a6151ec322cc09784aa61270ed7d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effectsCanBeApplied: 1
+  immunityProbability: 0
 --- !u!114 &6856343831782055353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,3 +280,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   experienceAmount: 10
+--- !u!114 &-5713933878105249420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8929512481293434859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 253a26824b3d2f82a845f4dbb7191443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 1
+  probability: 0.05
+  thingType: 1

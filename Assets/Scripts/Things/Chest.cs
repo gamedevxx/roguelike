@@ -39,7 +39,7 @@ public class Chest : MonoBehaviour
     IEnumerator Wait(float delay)
     {
         yield return new WaitForSeconds(delay);
-        _thingsSpawnManager.AssignToSpawn(transform.position, generatedCount);
+        _thingsSpawnManager.AssignToSpawn(transform.position, generatedCount, ThingsSpawnManager.ThingType.Thing);
         Destroy(gameObject);
     }
 

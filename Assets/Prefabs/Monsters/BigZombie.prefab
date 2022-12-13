@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 3117465850475246998}
   - component: {fileID: 6252138251562094074}
   - component: {fileID: -3402440411316577546}
+  - component: {fileID: 4645764954539319164}
   m_Layer: 6
   m_Name: BigZombie
   m_TagString: Enemy
@@ -193,8 +194,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: 0.2
-  maxHealth: 100
+  maxHealth: 60
   healthRegenerationSpeed: 0
+  changeHealthImmunityProbability: 0
 --- !u!114 &1549370803404551414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,6 +253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1a6151ec322cc09784aa61270ed7d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effectsCanBeApplied: 1
+  immunityProbability: 0
 --- !u!114 &6252138251562094074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,4 +279,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2579d8c891012472abfb07e0bb5d6a53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  experienceAmount: 120
+  experienceAmount: 20
+--- !u!114 &4645764954539319164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549370803404551423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 253a26824b3d2f82a845f4dbb7191443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 3
+  probability: 0.1
+  thingType: 1

@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 7773527273237670930}
   - component: {fileID: 7322408974596855686}
   - component: {fileID: 264288577522970514}
+  - component: {fileID: -4235451947679941131}
   m_Layer: 6
   m_Name: Big demon
   m_TagString: Enemy
@@ -178,6 +179,7 @@ MonoBehaviour:
   armor: 0.4
   maxHealth: 200
   healthRegenerationSpeed: 0
+  changeHealthImmunityProbability: 0
 --- !u!114 &-8101993275142222093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,6 +299,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1a6151ec322cc09784aa61270ed7d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effectsCanBeApplied: 1
+  immunityProbability: 0
 --- !u!114 &264288577522970514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,3 +314,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   experienceAmount: 120
+--- !u!114 &-4235451947679941131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7442029487557123562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 253a26824b3d2f82a845f4dbb7191443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 2
+  probability: 0.3
+  thingType: 1

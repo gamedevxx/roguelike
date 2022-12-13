@@ -2068,7 +2068,7 @@ Tilemap:
       - {fileID: 21300000, guid: 2c81c08821ed53b7bb59b04c5016f39b, type: 3}
       - {fileID: 21300000, guid: 8e4bd1157953d0480aec33c1a23b64e5, type: 3}
       - {fileID: 21300000, guid: ef6f042eca6cc0f03ad4acd83106e76e, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
@@ -2491,7 +2491,7 @@ MonoBehaviour:
   m_Intensity: 0.6
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000a76a88fd
+  m_ApplyToSortingLayers: 00000000a76a88fdb738483909edf6ee
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -3103,6 +3103,9 @@ MonoBehaviour:
   - {fileID: 8860558034234527429}
   - {fileID: 6618735912961033458}
   - {fileID: 4755634068587476657}
+  roomFinishObjectsProbabilities:
+  - 0.7
+  - 0.7
   Xmin: -6
   Xmax: 6
   Ymin: -5

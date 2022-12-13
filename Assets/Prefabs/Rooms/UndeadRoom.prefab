@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Intensity: 0.6
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000a76a88fd
+  m_ApplyToSortingLayers: 00000000a76a88fdb738483909edf6ee
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -404,6 +404,8 @@ MonoBehaviour:
   - {fileID: 2821360498871435997}
   - {fileID: 4180398104967836841}
   - {fileID: 206018510908081319}
+  roomFinishObjectsProbabilities:
+  - 0.4
   Xmin: -6
   Xmax: 6
   Ymin: -5
@@ -417,12 +419,14 @@ MonoBehaviour:
   - {fileID: 8327942339653633563, guid: f325812bd32bac814aa4d490efeb97dd, type: 3}
   - {fileID: 4465616073203722605, guid: a372b0700516d36279de5e5593b7fb99, type: 3}
   - {fileID: 8205900349307814044, guid: 16836e14ad6053dc0907374ab3ee5284, type: 3}
+  - {fileID: 1549370803404551423, guid: 0ed12ec77aca24e4fb0894d43dcead1d, type: 3}
   enemyProbabilities:
   - 0.2
-  - 0.3
+  - 0.25
   - 0.3
   - 0.15
-  - 0.05
+  - 0.07
+  - 0.03
 --- !u!61 &333339726447181942
 BoxCollider2D:
   m_ObjectHideFlags: 0

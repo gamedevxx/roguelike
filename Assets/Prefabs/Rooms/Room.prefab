@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Intensity: 0.6
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000a76a88fd
+  m_ApplyToSortingLayers: 00000000a76a88fdb738483909edf6ee
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -2071,7 +2071,7 @@ Tilemap:
       - {fileID: 21300000, guid: 42d8c6303421c3a62bbe245b17b7920a, type: 3}
       - {fileID: 21300000, guid: df7cb47cd5b7f6d49b216dfe1ce0fc40, type: 3}
       - {fileID: 21300000, guid: a85522d90e061aba7bcedb4f7ad48788, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 4, y: 4, z: 0}
@@ -2886,6 +2886,9 @@ MonoBehaviour:
   DoorR: {fileID: 6934684065241356832}
   roomFinishObjects:
   - {fileID: 8965399581155389927}
+  roomOnPlayerEnterObjects: []
+  roomFinishObjectsProbabilities:
+  - 1
   Xmin: -6
   Xmax: 6
   Ymin: -5

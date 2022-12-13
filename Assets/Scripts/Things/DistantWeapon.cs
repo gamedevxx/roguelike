@@ -7,7 +7,7 @@ public class DistantWeapon : AbstractWeapon
 
     public Projectile projectile;
 
-    public float spawnDistance;
+    public float spawnDistance = 1;
     
     public Vector3 spawnOffset;
 

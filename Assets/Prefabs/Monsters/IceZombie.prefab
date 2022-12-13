@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 8807417124028635376}
   - component: {fileID: 1179086175514113631}
   - component: {fileID: 6620388890342060089}
+  - component: {fileID: -5380023055839013064}
   m_Layer: 6
   m_Name: IceZombie
   m_TagString: Enemy
@@ -196,6 +197,7 @@ MonoBehaviour:
   armor: 0.1
   maxHealth: 30
   healthRegenerationSpeed: 0
+  changeHealthImmunityProbability: 0
 --- !u!114 &3631553148253956005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,6 +271,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1a6151ec322cc09784aa61270ed7d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effectsCanBeApplied: 1
+  immunityProbability: 0
 --- !u!114 &1179086175514113631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,3 +298,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   experienceAmount: 12
+--- !u!114 &-5380023055839013064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3631553148253956001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 253a26824b3d2f82a845f4dbb7191443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 1
+  probability: 0.05
+  thingType: 1

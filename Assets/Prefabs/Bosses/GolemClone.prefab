@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 7669027655711071211}
   - component: {fileID: -5960021904811667072}
   - component: {fileID: -592224639427441352}
+  - component: {fileID: 717140991061941111}
   m_Layer: 6
   m_Name: GolemClone
   m_TagString: Enemy
@@ -205,6 +206,7 @@ MonoBehaviour:
   armor: 0.1
   maxHealth: 50
   healthRegenerationSpeed: 0
+  changeHealthImmunityProbability: 0
 --- !u!114 &5477493625979216991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,6 +219,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1a6151ec322cc09784aa61270ed7d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effectsCanBeApplied: 1
+  immunityProbability: 0
 --- !u!95 &7669027655711071211
 Animator:
   serializedVersion: 4
@@ -264,3 +268,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   experienceAmount: 0
+--- !u!114 &717140991061941111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2342090470414414707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 253a26824b3d2f82a845f4dbb7191443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 1
+  probability: 0.01
+  thingType: 1

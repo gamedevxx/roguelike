@@ -41,7 +41,7 @@ public class PlayerWeaponEnchanter : MonoBehaviour
             damage *= distantDamageCoefficient;
         }
 
-        if (damage > 0) {
+        if (damage > 0 && vampirismCoefficient > 0) {
             _creatureBody.Heal(damage * vampirismCoefficient);
         }
 
