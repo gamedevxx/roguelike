@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,11 +7,13 @@ public class Weapon : AbstractWeapon
     
     public float timeout = 1.0f;
 
+    protected PlayerWeaponEnchanter playerWeaponEnchanter;
+    
     private List<CreatureEffectManager> _enemyList;
 
     private Animator _animator;
 
-    private float lastActivationTime;
+    private float _lastActivationTime;
     
     private void Start()
     {
@@ -20,12 +21,14 @@ public class Weapon : AbstractWeapon
 
         _enemyList = new List<CreatureEffectManager>();
 
-        lastActivationTime = Time.time;
+        playerWeaponEnchanter = GetComponentInParent<PlayerWeaponEnchanter>();
+
+        _lastActivationTime = Time.time;
     }
 
     public override bool Activate(Vector2 direction)
     {
-        if (lastActivationTime + timeout > Time.time)
+        if (_lastActivationTime + playerWeaponEnchanter.EnchantTimeout(timeout) > Time.time)
         {
             return false;
         }
@@ -37,14 +40,15 @@ public class Weapon : AbstractWeapon
         
         _animator.Play("Simple");
 
-        lastActivationTime = Time.time;
+        _lastActivationTime = Time.time;
 
         return false;
     }
 
     public virtual void Damage(CreatureEffectManager enemy, Vector2 direction)
     {
-        enemy.GetCreatureBody().Damage(damage);
+        enemy.GetCreatureBody().Damage(playerWeaponEnchanter.EnchantDamage(damage, true));
+        playerWeaponEnchanter.AdditionalEnemyAttack(enemy);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

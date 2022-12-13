@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ExperienceOnDestroy : MonoBehaviour
 {
-    public int experienceAmount;
+    public float experienceAmount;
     
     private void OnDestroy()
     {

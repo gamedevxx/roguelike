@@ -7,7 +7,7 @@ public class PlayerEnergy : MonoBehaviour
     public float energyToActivate = 1;
     public float energyPerSecond = 3;
     public float energyRegenerationPerSecond = 1;
-    
+
     public float speedUp = 6;
 
     private MoveController _moveController;

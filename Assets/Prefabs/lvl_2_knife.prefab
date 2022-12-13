@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 7
-  timeout: 0.1
+  timeout: 0.15
 --- !u!95 &1740267741392301735
 Animator:
   serializedVersion: 4
