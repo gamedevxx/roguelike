@@ -6,7 +6,7 @@ public class PickablePowerUp : AbstractWeapon
     public float effectStrength = 1.0f;
     public CreatureEffectManager.EffectType effectType = CreatureEffectManager.EffectType.Heal;
     
-    public override bool Activate(Vector2 direction)
+    public override bool Activate(Vector3 direction)
     {
         GetComponentInParent<CreatureEffectManager>()
             .AddEffect(new CreatureEffectManager.Effect(

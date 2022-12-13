@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Vector3 = System.Numerics.Vector3;
 
 public class PlayerHandController : MonoBehaviour
 {
@@ -37,9 +33,24 @@ public class PlayerHandController : MonoBehaviour
     
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && HandThingId != -1)
+        if (HandThingId != -1)
         {
-            if (handThing.Activate(Vector2.up))
+            AttackOnDirection(KeyCode.Q, Vector3.up);
+            
+            ///////
+            
+            AttackOnDirection(KeyCode.S, Vector3.down);
+            AttackOnDirection(KeyCode.W, Vector3.up);
+            AttackOnDirection(KeyCode.A, Vector3.left);
+            AttackOnDirection(KeyCode.D, Vector3.right);
+        }
+    }
+
+    private void AttackOnDirection(KeyCode key, Vector3 direction)
+    {
+        if (Input.GetKeyDown(key))
+        {
+            if (handThing.Activate(direction))
             {
                 HandThingId = -1;
             }
