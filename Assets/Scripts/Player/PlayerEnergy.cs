@@ -27,13 +27,13 @@ public class PlayerEnergy : MonoBehaviour
         }
     }
 
-    private float _energy;
-    
+    public float Energy { get; private set; }
+
     void Start()
     {
         _moveController = GetComponent<MoveController>();
 
-        _energy = maxEnergy;
+        Energy = maxEnergy;
     }
 
     private void Update()
@@ -42,12 +42,12 @@ public class PlayerEnergy : MonoBehaviour
         {
             if (!Activated)
             {
-                if (_energy < energyToActivate)
+                if (Energy < energyToActivate)
                 {
                     return;
                 }
 
-                _energy -= energyToActivate;
+                Energy -= energyToActivate;
             }
 
             Activated = !Activated;
@@ -55,9 +55,9 @@ public class PlayerEnergy : MonoBehaviour
 
         if (Activated)
         {
-            if (_energy >= Time.deltaTime * energyPerSecond)
+            if (Energy >= Time.deltaTime * energyPerSecond)
             {
-                _energy -= Time.deltaTime * energyPerSecond;
+                Energy -= Time.deltaTime * energyPerSecond;
             }
             else
             {
@@ -66,8 +66,8 @@ public class PlayerEnergy : MonoBehaviour
         }
         else
         {
-            _energy = Mathf.Min(
-                _energy + Time.deltaTime * energyRegenerationPerSecond, maxEnergy);
+            Energy = Mathf.Min(
+                Energy + Time.deltaTime * energyRegenerationPerSecond, maxEnergy);
         }
     }
 }

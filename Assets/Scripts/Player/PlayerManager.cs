@@ -3,10 +3,12 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     private CreatureBody _creatureBody;
+    private PlayerEnergy _playerEnergy;
 
     private void Start()
     {
         _creatureBody = GetComponent<CreatureBody>();
+        _playerEnergy = GetComponent<PlayerEnergy>();
     }
 
     public float GetHealth()
@@ -23,18 +25,24 @@ public class PlayerManager : MonoBehaviour
     {
         return _creatureBody.armor;
     }
-
-    /*
+    
     public float GetExperience()
     {
-
+        return PlayerInfo.Experience;
     }
 
     public float GetMaxExperience()
     {
-
+        return PlayerInfo.ExpPerLevel;
     }
-    */
 
-    // TODO: more functions to interact with player
+    public float GetEnergy()
+    {
+        return _playerEnergy.Energy;
+    }
+
+    public float GetMaxEnergy()
+    {
+        return _playerEnergy.maxEnergy;
+    }
 }
