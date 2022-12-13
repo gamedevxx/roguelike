@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 5989533033439081899}
   - component: {fileID: 5007780400472543144}
   - component: {fileID: 4568341122973393978}
+  - component: {fileID: 4103439575050875191}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -186,6 +187,7 @@ MonoBehaviour:
   armor: 0
   maxHealth: 100
   healthRegenerationSpeed: 0
+  changeHealthImmunityProbability: 0
 --- !u!114 &3952523233021299682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,6 +238,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1a6151ec322cc09784aa61270ed7d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effectsCanBeApplied: 1
+  immunityProbability: 0
 --- !u!114 &6954226624691582764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,7 +386,29 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1464621b5d9546d3b1f3aa46bca047b0, type: 3}
   m_Name: 
-  m_EditorClassIdentifier:
+  m_EditorClassIdentifier: 
+--- !u!114 &4103439575050875191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3952523233021299683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c65593c3a9a89908cb52c0bb2035adaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  additionalMeleeDamage: 0
+  additionalDistantDamage: 0
+  meleeDamageCoefficient: 1
+  distantDamageCoefficient: 1
+  effectTimeCoefficient: 1
+  effectStrengthCoefficient: 1
+  timeoutCoefficient: 1
+  vampirismCoefficient: 0
+  criticalDamageCoefficient: 2
+  criticalDamageProbability: 0
 --- !u!1 &6845181611920110414
 GameObject:
   m_ObjectHideFlags: 0
