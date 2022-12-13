@@ -1240,12 +1240,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomPrefabs:
-  - {fileID: 6934684065399505241, guid: cbd3102b3818448f88bcbbeb3c2cd313, type: 3}
+  - {fileID: 3879626083625571224, guid: d43474fa843f8c42f9f8362579bb278c, type: 3}
+  - {fileID: 3879626083625571224, guid: 822f040de8a760bc39a3e8a6aec850c6, type: 3}
+  - {fileID: 3879626083625571224, guid: a7993b7f1db7691e4bfdd80f0e2dd8b2, type: 3}
   bossRoomPrefabs:
   - {fileID: 3935640602750904009, guid: 532865b21b79d4c1f9474df23e5ab0f4, type: 3}
+  - {fileID: 3935640602750904009, guid: 3692a8858ac1630229b1dd6b0a4f13fc, type: 3}
+  - {fileID: 3935640602750904009, guid: 30ab61344b5c644d682064d569823959, type: 3}
   startingRoom: {fileID: 6934684065399505241, guid: cbd3102b3818448f88bcbbeb3c2cd313, type: 3}
-  n: 3
-  levelSize: 20
+  n: 7
+  levelSize: 4
 --- !u!4 &948325191
 Transform:
   m_ObjectHideFlags: 0

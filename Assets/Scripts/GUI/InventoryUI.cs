@@ -87,7 +87,6 @@ public class InventoryUI : MonoBehaviour
                 GameObject c = child.gameObject;
                 if (c.name != "selected" && c.name != "background")
                 {
-                    Debug.Log(c.name);
                     toDestroy.Add(c);
                 }
             }
