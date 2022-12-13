@@ -1,24 +1,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : AbstractWeapon
+public class DistantWeapon : AbstractWeapon
 {
-    public float damage;
-    
     public float timeout = 1.0f;
+
+    public Projectile projectile;
+
+    public float spawnDistance;
+    
+    public Vector3 spawnOffset;
 
     protected PlayerWeaponEnchanter playerWeaponEnchanter;
     
     private List<CreatureEffectManager> _enemyList;
 
-    private Animator _animator;
-
     private float _lastActivationTime;
     
     private void Start()
     {
-        _animator = GetComponent<Animator>();
-
         _enemyList = new List<CreatureEffectManager>();
 
         playerWeaponEnchanter = GetComponentInParent<PlayerWeaponEnchanter>();
@@ -33,22 +33,24 @@ public class Weapon : AbstractWeapon
             return false;
         }
 
-        foreach (var enemy in _enemyList) {
-            
-            Damage(enemy, direction);
-        }
-        
-        _animator.Play("Simple");
+        Damage(direction);
 
         _lastActivationTime = Time.time;
 
         return false;
     }
 
-    public virtual void Damage(CreatureEffectManager enemy, Vector3 direction)
+    public virtual void Damage(Vector3 direction)
     {
-        enemy.GetCreatureBody().Damage(playerWeaponEnchanter.EnchantDamage(damage, true));
-        playerWeaponEnchanter.AdditionalEnemyAttack(enemy);
+        Projectile spawnedProjectile = Instantiate(
+            projectile,
+            transform.position + spawnOffset + direction * spawnDistance,
+            Quaternion.FromToRotation(Vector3.right, direction));
+        
+        spawnedProjectile.damage = playerWeaponEnchanter.EnchantDamage(spawnedProjectile.damage, false);
+        spawnedProjectile.direction = direction;
+        
+        // playerWeaponEnchanter.AdditionalEnemyAttack(enemy);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
