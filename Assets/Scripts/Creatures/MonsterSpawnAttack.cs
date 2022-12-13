@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class MonsterSpawnAttack : MonoBehaviour
 {
+    public static bool usable = true;
+    
     public float spawnZoneSize = 2;
 
     public float timeout = 6;
@@ -13,7 +15,7 @@ public class MonsterSpawnAttack : MonoBehaviour
     public GameObject spawnedObject;
 
     public float viewRange = 10;
-    
+
     private Transform _player;
 
     private float _lastSpawnTime;
@@ -27,6 +29,11 @@ public class MonsterSpawnAttack : MonoBehaviour
 
     void Update()
     {
+        if (!usable)
+        {
+            return;
+        }
+        
         if (_lastSpawnTime + timeout > Time.time)
         {
             return;

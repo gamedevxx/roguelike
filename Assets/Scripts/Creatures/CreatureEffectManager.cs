@@ -1,16 +1,23 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class CreatureEffectManager : MonoBehaviour
 {
+    public bool effectsCanBeApplied = true;
+    public float immunityProbability = 0;
+    
     private CreatureBody _creatureBody;
     private MoveController _moveController;
 
     public enum EffectType
     {
         Freeze,
-        Damage
+        Damage,
+        Heal,
+        Armor,
+        Regeneration
     }
     
     public class Effect
@@ -77,6 +84,14 @@ public class CreatureEffectManager : MonoBehaviour
                 break;
             case EffectType.Damage:
                 break;
+            case EffectType.Heal:
+                break;
+            case EffectType.Armor:
+                _creatureBody.armor += effect.EffectStrength;
+                break;
+            case EffectType.Regeneration:
+                _creatureBody.AddRegenerationSpeed(effect.EffectStrength);
+                break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
@@ -90,6 +105,13 @@ public class CreatureEffectManager : MonoBehaviour
                 break;
             case EffectType.Damage:
                 _creatureBody.Damage(effect.EffectStrength * deltaTime);
+                break;
+            case EffectType.Heal:
+                _creatureBody.Heal(effect.EffectStrength * deltaTime);
+                break;
+            case EffectType.Armor:
+                break;
+            case EffectType.Regeneration:
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -105,6 +127,14 @@ public class CreatureEffectManager : MonoBehaviour
                 break;
             case EffectType.Damage:
                 break;
+            case EffectType.Heal:
+                break;
+            case EffectType.Armor:
+                _creatureBody.armor -= effect.EffectStrength;
+                break;
+            case EffectType.Regeneration:
+                _creatureBody.AddRegenerationSpeed(-effect.EffectStrength);
+                break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
@@ -117,6 +147,16 @@ public class CreatureEffectManager : MonoBehaviour
 
     public void AddEffect(Effect effect)
     {
+        if (!effectsCanBeApplied)
+        {
+            return;
+        }
+
+        if (immunityProbability != 0 && Random.value < immunityProbability)
+        {
+            return;
+        }
+        
         OnStartEffect(effect);
         _effects.Add(effect);
     }

@@ -23,9 +23,8 @@ public class PlayerHandController : MonoBehaviour
             if (value != -1)
             {
                 handThing = Instantiate(_thingObjectsList.thingObjects[value], gameObject.transform);
+                _handThingId = value;
             }
-
-            _handThingId = value;
         }
     }
 

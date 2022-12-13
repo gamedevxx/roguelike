@@ -676,8 +676,16 @@ MonoBehaviour:
   maxSpawnDistance: 1
   things:
   - {fileID: 5957566802522026619, guid: ebd4fe29e902b387eb4f75b5fa2184e2, type: 3}
-  - {fileID: 5376493402542932644, guid: 36deee972c014bfd0826dde112448a5f, type: 3}
+  - {fileID: 5651611065605456518, guid: 96869c595e7574f2c8ca7c25f68a0a7c, type: 3}
+  - {fileID: 5862300905266084972, guid: a3f2bb1e51372436cb3a766565ab8508, type: 3}
+  - {fileID: 5861087741741504517, guid: 4d7a1ff611c114a82adde089a4357811, type: 3}
+  - {fileID: 7941069544235814378, guid: 72ac2e0560fdf45709a1ec6e3c7fedf9, type: 3}
+  - {fileID: 2621169767838734068, guid: a7138d2b297ad41698ae26fa50937063, type: 3}
   thingProbabilities:
+  - 1
+  - 1
+  - 1
+  - 1
   - 1
   - 1
 --- !u!4 &508512181
@@ -2027,7 +2035,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thingIcons:
   - {fileID: 21300000, guid: c92c8accbeb882f4ba6888a2172b4bc6, type: 3}
-  - {fileID: 21300000, guid: dde79eaafa0df8871a738469dc5c4dcd, type: 3}
+  - {fileID: 21300000, guid: 9512286e1b99efdebb5ef238518e1ca4, type: 3}
+  - {fileID: 21300000, guid: df08ebdbae5b494aeba9e6856205aad1, type: 3}
+  - {fileID: 21300000, guid: 5914195f92b535ac1afe08ffbd8ae0e0, type: 3}
+  - {fileID: 21300000, guid: 66ddce1716a463121865139dcc57202a, type: 3}
+  - {fileID: 21300000, guid: 8e30ff8555b342e6ba31b0228d856f00, type: 3}
 --- !u!1 &1925700270
 GameObject:
   m_ObjectHideFlags: 0
@@ -2172,7 +2184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5007780400472543144, guid: 3e22b529d4573b8178def295bddcd082, type: 3}
       propertyPath: thingObjects.Array.size
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5007780400472543144, guid: 3e22b529d4573b8178def295bddcd082, type: 3}
       propertyPath: thingObjects.Array.data[0]
@@ -2180,6 +2192,26 @@ PrefabInstance:
       objectReference: {fileID: 2351445015921597005, guid: e425d0841beb940c18ba35e54b2ce7fb, type: 3}
     - target: {fileID: 5007780400472543144, guid: 3e22b529d4573b8178def295bddcd082, type: 3}
       propertyPath: thingObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 3953789873201902042, guid: 7a96c3d1e534247fda8e68edd7b6bcab, type: 3}
+    - target: {fileID: 5007780400472543144, guid: 3e22b529d4573b8178def295bddcd082, type: 3}
+      propertyPath: thingObjects.Array.data[2]
+      value: 
+      objectReference: {fileID: 2615551915149735219, guid: 78c735899f8d64333bbdeeaca9d70fcf, type: 3}
+    - target: {fileID: 5007780400472543144, guid: 3e22b529d4573b8178def295bddcd082, type: 3}
+      propertyPath: thingObjects.Array.data[3]
+      value: 
+      objectReference: {fileID: 9091247477309336818, guid: f3c2b12cf0b3b485282434077fdb23ad, type: 3}
+    - target: {fileID: 5007780400472543144, guid: 3e22b529d4573b8178def295bddcd082, type: 3}
+      propertyPath: thingObjects.Array.data[4]
+      value: 
+      objectReference: {fileID: 5291459028532848576, guid: 5374b47ecf869478ca28523a3b77415d, type: 3}
+    - target: {fileID: 5007780400472543144, guid: 3e22b529d4573b8178def295bddcd082, type: 3}
+      propertyPath: thingObjects.Array.data[5]
+      value: 
+      objectReference: {fileID: 8392984898983692850, guid: 4a70b388fa6a04f97a0e6123e921b060, type: 3}
+    - target: {fileID: 5007780400472543144, guid: 3e22b529d4573b8178def295bddcd082, type: 3}
+      propertyPath: thingObjects.Array.data[6]
       value: 
       objectReference: {fileID: 5376493402542932646, guid: 36deee972c014bfd0826dde112448a5f, type: 3}
     - target: {fileID: 6210430567740928410, guid: 3e22b529d4573b8178def295bddcd082, type: 3}

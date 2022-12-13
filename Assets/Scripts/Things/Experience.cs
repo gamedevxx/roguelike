@@ -6,7 +6,7 @@ public class Experience : MonoBehaviour
 {
     public GameObject exp;
 
-    public int points = 10;
+    public float points = 10;
 
     public Sprite[] animationSprites; // array of sprites
     public float animationTime = 0.2f; // how often does it circle to the next sprite

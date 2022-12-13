@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -5617504213419790884}
   - component: {fileID: -3743179202686993167}
   - component: {fileID: -5363686165986893660}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RedProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

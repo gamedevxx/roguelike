@@ -9,6 +9,7 @@ public class Room : MonoBehaviour {
     public GameObject DoorR;
 
     public List<GameObject> roomFinishObjects;
+    public List<GameObject> roomOnPlayerEnterObjects;
 
     public int Xmin;
     public int Xmax;
@@ -87,6 +88,10 @@ public class Room : MonoBehaviour {
     {
         if (!noEnemies && !col.isTrigger && col.gameObject.GetComponent<PlayerTag>() != null && enemiesKilled.alive > 0) 
         {
+            foreach(var v in roomOnPlayerEnterObjects)
+            {
+                v.SetActive(true);
+            }
             changeDoorsState(true);
         }
     }

@@ -1,9 +1,13 @@
+using UnityEngine;
+
 public static class PlayerInfo
 {
     public const int ExpPerLevel = 100;
     
+    public static float gainExperienceCoefficient = 1;
+    
     private static int _level = 1;
-    private static int _experience;
+    private static float _experience;
 
     public static int Level
     {
@@ -11,20 +15,21 @@ public static class PlayerInfo
         private set => _level = value;
     }
 
-    public static int Experience
+    public static float Experience
     {
         get => _experience;
         private set
         {
             _experience = value;
-            _level += _experience / ExpPerLevel;
-            _experience %= ExpPerLevel;
+            int levelsAdded = Mathf.RoundToInt(_experience / ExpPerLevel);
+            _level += levelsAdded;
+            _experience -= ExpPerLevel * levelsAdded;
         }
     }
 
-    public static void GainExperience(int points)
+    public static void GainExperience(float points)
     {
-        Experience += points;
+        Experience += points * gainExperienceCoefficient;
     }
 
     public static void ResetLevel()

@@ -3,10 +3,10 @@ using UnityEngine;
 public class CreatureBody : MonoBehaviour
 {
     public float armor;
-    
     public float maxHealth = 100;
-
     public float healthRegenerationSpeed;
+    
+    public float changeHealthImmunityProbability = 0;
 
     public float Health { get; private set; }
 
@@ -30,8 +30,23 @@ public class CreatureBody : MonoBehaviour
         Health = Mathf.Min(maxHealth, Health + healthRegenerationSpeed * Time.deltaTime);
     }
 
-    public void Damage(float damage) // different damage types ??
+    public void Heal(float healing)
     {
+        Damage(-healing);
+    }
+
+    public void AddRegenerationSpeed(float regeneration)
+    {
+        healthRegenerationSpeed += regeneration;
+    }
+
+    public void Damage(float damage)
+    {
+        if (changeHealthImmunityProbability > 0 && Random.value < changeHealthImmunityProbability)
+        {
+            return;
+        }
+        
         if (damage < 0)
         {
             Health -= damage;
