@@ -97,6 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a57be3c1a90bfc4e9969f2ce8998280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 10
+  duration: 20
   effectStrength: 0.4
   effectType: 3

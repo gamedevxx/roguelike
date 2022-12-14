@@ -18,7 +18,6 @@ public class MonsterUpgrader : MonoBehaviour
 
         if (_creatureBody != null)
         {
-            _creatureBody.armor *= k;
             _creatureBody.maxHealth *= k;
         }
 

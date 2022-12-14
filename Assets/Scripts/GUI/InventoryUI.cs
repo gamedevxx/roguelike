@@ -66,7 +66,8 @@ public class InventoryUI : MonoBehaviour
                 var new_slot_selected_bg = new_slot.transform.Find("selected").gameObject;
                 new_slot_selected_bg.SetActive(true);
                 selected = slotId;
-            } else
+            } 
+            else
             {
                 playerInventory.Swap(slotId);
                 RefreshGridAndHand();
@@ -74,7 +75,8 @@ public class InventoryUI : MonoBehaviour
                 var slot_selected_bg = slot_selected_.transform.Find("selected").gameObject;
                 slot_selected_bg.transform.SetParent(slot_selected_.transform, false);
             }
-        } else
+        } 
+        else
         {
             RefreshHand();
             grid.SetActive(isActive == 1);

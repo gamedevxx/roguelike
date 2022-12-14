@@ -8,7 +8,6 @@ public class PlayerInventory : MonoBehaviour
 
     private int[] inventory;
     private int size;
-    private int handThingId = -1;
 
     private PlayerHandController handController;
 
@@ -25,10 +24,8 @@ public class PlayerInventory : MonoBehaviour
 
     public void Put(int thing)
     {
-        Debug.Log(thing);
-        if (handThingId == -1)
+        if (handController.HandThingId == -1)
         {
-            handThingId = thing;
             handController.HandThingId = thing;
         } else {
             for (int i = 0; i < InventorySize; i++)
@@ -45,10 +42,7 @@ public class PlayerInventory : MonoBehaviour
 
     public void Swap(int id)
     {
-        int thing = inventory[id];
-        inventory[id] = handThingId;
-        handThingId = thing;
-        handController.HandThingId = thing;
+        (inventory[id], handController.HandThingId) = (handController.HandThingId, inventory[id]);
     }
     
     public void SetEmptyOn(int id)
@@ -62,7 +56,7 @@ public class PlayerInventory : MonoBehaviour
 
     public void SetEmptyOnHand()
     {
-        handThingId = -1;
+        handController.HandThingId = -1;
     }
 
     public bool IsEmptyOn(int id)
@@ -72,7 +66,7 @@ public class PlayerInventory : MonoBehaviour
 
     public bool IsEmptyOnHand()
     {
-        return handThingId == -1;
+        return handController.HandThingId == -1;
     }
 
     public int GetOn(int id)
@@ -82,12 +76,12 @@ public class PlayerInventory : MonoBehaviour
 
     public void SetOnHand(int thing)
     {
-        handThingId = thing;
+        handController.HandThingId = thing;
     }
 
     public int GetOnHand()
     {
-        return handThingId;
+        return handController.HandThingId;
     }
 
     public void SetOn(int id, int thing)
@@ -108,5 +102,10 @@ public class PlayerInventory : MonoBehaviour
             c = 1;
         }
         return InventorySize - size - c;
+    }
+
+    public bool IsFull()
+    {
+        return size == InventorySize;
     }
 }

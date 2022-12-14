@@ -577,7 +577,7 @@ Tilemap:
       - {fileID: 21300000, guid: 727d97708411f77a48b8ebcb14cf1e6f, type: 3}
       - {fileID: 21300000, guid: 55dc8ef31be6240669f2ce82ebdd611d, type: 3}
       - {fileID: 21300000, guid: ca02de8a6e4e9abda94f47297c038e5f, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 4, y: -6, z: 0}
@@ -2144,7 +2144,7 @@ Tilemap:
       - {fileID: 21300000, guid: 2c81c08821ed53b7bb59b04c5016f39b, type: 3}
       - {fileID: 21300000, guid: 8e4bd1157953d0480aec33c1a23b64e5, type: 3}
       - {fileID: 21300000, guid: ef6f042eca6cc0f03ad4acd83106e76e, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
@@ -3195,12 +3195,14 @@ MonoBehaviour:
   - {fileID: 8327942339653633563, guid: f325812bd32bac814aa4d490efeb97dd, type: 3}
   - {fileID: 4465616073203722605, guid: a372b0700516d36279de5e5593b7fb99, type: 3}
   - {fileID: 8205900349307814044, guid: 16836e14ad6053dc0907374ab3ee5284, type: 3}
+  - {fileID: 1549370803404551423, guid: 0ed12ec77aca24e4fb0894d43dcead1d, type: 3}
   enemyProbabilities:
   - 0.2
-  - 0.3
+  - 0.25
   - 0.3
   - 0.15
-  - 0.05
+  - 0.07
+  - 0.03
   ladder: {fileID: 398774304386250377}
   bosses:
   - {fileID: 1238994296439053089, guid: 4920f2ab5e58e964394a2d0b1ccc2509, type: 3}
