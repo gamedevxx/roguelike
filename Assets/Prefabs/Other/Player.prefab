@@ -24,10 +24,10 @@ GameObject:
   - component: {fileID: 4877161715217421444}
   - component: {fileID: 5989533033439081899}
   - component: {fileID: 5007780400472543144}
-  - component: {fileID: 4568341122973393978}
   - component: {fileID: 4103439575050875191}
   - component: {fileID: 1285199125}
   - component: {fileID: 1285199126}
+  - component: {fileID: 2109012807}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -362,7 +362,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d5272f23d0409c695482ca5bc6443b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupThingTimeout: 0.1
 --- !u!114 &5007780400472543144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,18 +389,6 @@ MonoBehaviour:
   - {fileID: 5440823233106562989, guid: 3bbd85bcab9d444928cce4024e15dec2, type: 3}
   - {fileID: -5684259312593285481, guid: c5e0cd74aabe79483a9e0fb7684cbca2, type: 3}
   - {fileID: -5684259312593285481, guid: 518a4f6da089cc2b98d2a1bc3ad25b9a, type: 3}
---- !u!114 &4568341122973393978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3952523233021299683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1464621b5d9546d3b1f3aa46bca047b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4103439575050875191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,6 +440,18 @@ MonoBehaviour:
   energyPerSecond: 3
   energyRegenerationPerSecond: 1
   speedUp: 6
+--- !u!114 &2109012807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3952523233021299683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f0259d79624cc1c6b3c1f1c783ef20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6845181611920110414
 GameObject:
   m_ObjectHideFlags: 0

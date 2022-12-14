@@ -1,20 +1,19 @@
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 
-public class PlayerInventory : MonoBehaviour
+public static class PlayerInventory
 {
     public const int InventorySize = 9;
 
-    private int[] inventory;
-    private int size;
+    private static int[] inventory;
+    private static int size;
 
-    private int lastHandId = -1;
-    private PlayerHandController handController;
+    private static int lastHandId = -1;
+    public static PlayerHandController handController;
 
-    void Start()
+    static PlayerInventory()
     {
-        handController = gameObject.GetComponent<PlayerHandController>();
+    
         inventory = new int[InventorySize];
         for (int i = 0; i < InventorySize; i++)
         {
@@ -23,14 +22,14 @@ public class PlayerInventory : MonoBehaviour
         size = 0;
     }
 
-    void Update()
+    public static void UpdateHand()
     {
         if (lastHandId != -1 && handController.HandThingId == -1) {
             SwapWithLast();
         }
     }
 
-    public void Put(int thing)
+    public static void Put(int thing)
     {
         if (handController.HandThingId == -1)
         {
@@ -48,7 +47,7 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    public void Swap(int id)
+    public static void Swap(int id)
     {
         if (handController.HandThingId != -1) {
             lastHandId = id;
@@ -63,7 +62,7 @@ public class PlayerInventory : MonoBehaviour
         (inventory[id], handController.HandThingId) = (handController.HandThingId, inventory[id]);
     }
 
-    public void SwapWithLast()
+    public static void SwapWithLast()
     {
         if (lastHandId == -1)
         {
@@ -73,7 +72,7 @@ public class PlayerInventory : MonoBehaviour
         lastHandId = -1;
     }
     
-    public void SetEmptyOn(int id)
+    public static void SetEmptyOn(int id)
     {
         if (inventory[id] != -1)
         {
@@ -82,37 +81,37 @@ public class PlayerInventory : MonoBehaviour
         inventory[id] = -1;
     }
 
-    public void SetEmptyOnHand()
+    public static void SetEmptyOnHand()
     {
         handController.HandThingId = -1;
     }
 
-    public bool IsEmptyOn(int id)
+    public static bool IsEmptyOn(int id)
     {
         return inventory[id] == -1;
     }
 
-    public bool IsEmptyOnHand()
+    public static bool IsEmptyOnHand()
     {
         return handController.HandThingId == -1;
     }
 
-    public int GetOn(int id)
+    public static int GetOn(int id)
     {
         return inventory[id];
     }
 
-    public void SetOnHand(int thing)
+    public static void SetOnHand(int thing)
     {
         handController.HandThingId = thing;
     }
 
-    public int GetOnHand()
+    public static int GetOnHand()
     {
         return handController.HandThingId;
     }
 
-    public void SetOn(int id, int thing)
+    public static void SetOn(int id, int thing)
     {
         if (inventory[id] == -1)
         {
@@ -122,7 +121,7 @@ public class PlayerInventory : MonoBehaviour
         inventory[id] = thing;
     }
 
-    public int ThingsAmount()
+    public static int ThingsAmount()
     {
         int c = 0;
         if (!IsEmptyOnHand())
@@ -132,7 +131,7 @@ public class PlayerInventory : MonoBehaviour
         return InventorySize - size - c;
     }
 
-    public bool IsFull()
+    public static bool IsFull()
     {
         return size == InventorySize;
     }

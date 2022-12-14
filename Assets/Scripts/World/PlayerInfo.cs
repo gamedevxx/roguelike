@@ -12,7 +12,7 @@ public static class PlayerInfo
     public static int Level
     {
         get => _level;
-        private set => _level = value;
+        set => _level = value;
     }
 
     public static float Experience

@@ -55,7 +55,7 @@ public class MetaGameUI : MonoBehaviour
             activeSave.playerCurrentLevel = 1;
             activeSave.playerExperience = 0;
             activeSave.playerFreeLevels = 1;
-            activeSave.playerMaxHealth = 500;
+            activeSave.playerMaxHealth = 300;
             activeSave.playerName = NameGenerator.GenerateName();
             activeSave.saveId = activeSaveId;
         }

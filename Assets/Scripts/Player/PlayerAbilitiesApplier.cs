@@ -47,6 +47,10 @@ public class PlayerAbilitiesApplier : MonoBehaviour
 
     private void Awake()
     {
+        var save = JsonUtility.FromJson<Save>(PlayerPrefs.GetString("active"));
+        PlayerInfo.GainExperience(save.playerExperience);
+        PlayerInfo.Level = save.playerCurrentLevel;
+
         _creatureBody = GetComponent<CreatureBody>();
         _creatureEffectManager = GetComponent<CreatureEffectManager>();
         _moveController = GetComponent<MoveController>();
@@ -54,14 +58,18 @@ public class PlayerAbilitiesApplier : MonoBehaviour
         _playerWeaponEnchanter = GetComponent<PlayerWeaponEnchanter>();
         _light2D = GetComponent<Light2D>();
 
-        var abilities = GetAbilities();
+        var abilities = GetAbilities(save.playerAbilities);
+        ApplyAbilities(abilities);
+    }
 
+    private void ApplyAbilities(List<AbilityType> abilities)
+    {
         foreach (var ability in abilities)
         {
             switch (ability)
             {
                 ///////
-                
+
                 case AbilityType.AdditionalExp:
                     PlayerInfo.gainExperienceCoefficient *= 1.2f;
                     break;
@@ -77,9 +85,9 @@ public class PlayerAbilitiesApplier : MonoBehaviour
                 case AbilityType.FreeEnergyAbilityActivation:
                     _playerEnergy.energyToActivate = 0;
                     break;
-                
+
                 ///////
-    
+
                 case AbilityType.TemporaryPlayerArmor:
                     _creatureEffectManager.AddEffect(
                         new CreatureEffectManager.Effect(
@@ -100,9 +108,9 @@ public class PlayerAbilitiesApplier : MonoBehaviour
                 case AbilityType.MeleeDamageIncrease:
                     _playerWeaponEnchanter.additionalMeleeDamage += 1.2f;
                     break;
-    
+
                 ///////
-                
+
                 case AbilityType.Vampirism:
                     _playerWeaponEnchanter.vampirismCoefficient += 0.1f;
                     break;
@@ -124,9 +132,9 @@ public class PlayerAbilitiesApplier : MonoBehaviour
                 case AbilityType.CriticalDamageCoefficientIncrease:
                     _playerWeaponEnchanter.criticalDamageCoefficient *= 1.5f;
                     break;
-                
+
                 ///////
-                    
+
                 case AbilityType.DamageTimeoutDecrease:
                     _playerWeaponEnchanter.timeoutCoefficient *= 0.9f;
                     break;
@@ -143,7 +151,7 @@ public class PlayerAbilitiesApplier : MonoBehaviour
                     _light2D.pointLightInnerRadius *= 1.1f;
                     _light2D.pointLightOuterRadius *= 1.1f;
                     break;
-    
+
                 case AbilityType.MakeEnemiesSlower:
                     _playerWeaponEnchanter.addedEffects.Add(
                         new CreatureEffectManager.Effect(
@@ -184,9 +192,13 @@ public class PlayerAbilitiesApplier : MonoBehaviour
             }
         }
     }
-    
-    private List<AbilityType> GetAbilities()
+
+    private List<AbilityType> GetAbilities(List<int> abilities)
     {
-        throw new NotImplementedException();
+        List<AbilityType> ret = new List<AbilityType>();
+        foreach (int id in abilities) {
+            ret.Add((AbilityType)id);
+        }
+        return ret;
     }
 }

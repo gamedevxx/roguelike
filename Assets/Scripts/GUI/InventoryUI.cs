@@ -12,7 +12,6 @@ public class InventoryUI : MonoBehaviour
     private GameObject hand;
     private ThingObjectsList thingsList;
     private ThingIconsList thingsIcons;
-    private PlayerInventory playerInventory;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +22,7 @@ public class InventoryUI : MonoBehaviour
             var slot_selected_bg = slot_selected_.transform.Find("selected").gameObject;
             slot_selected_bg.SetActive(false);
         }
-        playerInventory = FindObjectOfType<PlayerInventory>();
+
         thingsList = FindObjectOfType<ThingObjectsList>();
         thingsIcons = FindObjectOfType<ThingIconsList>();
         grid.SetActive(isActive == 1);
@@ -66,7 +65,7 @@ public class InventoryUI : MonoBehaviour
             } 
             else
             {
-                playerInventory.Swap(slotId);
+                PlayerInventory.Swap(slotId);
                 RefreshGridAndHand();
                 var slot_selected_ = grid.transform.Find("Slot_" + selected).gameObject;
                 var slot_selected_bg = slot_selected_.transform.Find("selected").gameObject;
@@ -102,9 +101,9 @@ public class InventoryUI : MonoBehaviour
             }
             toDestroy.ForEach(child => Destroy(child));
 
-            if (!playerInventory.IsEmptyOn(i))
+            if (!PlayerInventory.IsEmptyOn(i))
             {
-                int id = playerInventory.GetOn(i);
+                int id = PlayerInventory.GetOn(i);
                 Sprite thingSprite = thingsIcons.thingIcons[id];
           
                 var img = new GameObject();
@@ -131,9 +130,9 @@ public class InventoryUI : MonoBehaviour
             }
         }
         toDestroy.ForEach(child => Destroy(child));
-        if (!playerInventory.IsEmptyOnHand())
+        if (!PlayerInventory.IsEmptyOnHand())
         {
-            int id = playerInventory.GetOnHand();
+            int id = PlayerInventory.GetOnHand();
             Sprite thingSprite = thingsIcons.thingIcons[id];
             
             var img = new GameObject();

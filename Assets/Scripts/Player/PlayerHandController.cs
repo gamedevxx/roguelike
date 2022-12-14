@@ -31,10 +31,12 @@ public class PlayerHandController : MonoBehaviour
     private void Start()
     {
         _thingObjectsList = GetComponent<ThingObjectsList>();
+        PlayerInventory.handController = this;
     }
     
     private void Update()
     {
+        PlayerInventory.UpdateHand();
         if (HandThingId != -1)
         {
             AttackOnDirection(KeyCode.Q, Vector3.up);
