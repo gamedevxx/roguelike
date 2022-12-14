@@ -13,7 +13,7 @@ public class JumpOnPlace : MonoBehaviour
 
     public float minSpeed = 0.03f;
     
-    private float _startPosition;
+    private Vector3 _startPosition;
     
     private bool _moveUp = true;
 
@@ -23,11 +23,11 @@ public class JumpOnPlace : MonoBehaviour
     {
         if (_firstUpdate)
         {
-            _startPosition = transform.position.y;
+            _startPosition = transform.position;
             _firstUpdate = false;
         }
         
-        float currentPosition = transform.position.y - _startPosition;
+        float currentPosition = transform.position.y - _startPosition.y;
         
         float coefficient = 
             Mathf.Max(currentPosition >= 0 
@@ -41,7 +41,7 @@ public class JumpOnPlace : MonoBehaviour
         {
             if (currentPosition + positionChange >= topPosition)
             {
-                transform.position = (_startPosition + topPosition) * Vector3.up;
+                transform.position = _startPosition + topPosition * Vector3.up;
                 _moveUp = false;
             }
             else
@@ -53,7 +53,7 @@ public class JumpOnPlace : MonoBehaviour
         {
             if (currentPosition - positionChange <= bottomPosition)
             {
-                transform.position = (_startPosition + bottomPosition) * Vector3.up;
+                transform.position = _startPosition + bottomPosition * Vector3.up;
                 _moveUp = true;
             }
             else
