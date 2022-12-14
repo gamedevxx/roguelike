@@ -10,6 +10,7 @@ public class StatsUI : MonoBehaviour
     public Slider healthSlider;
     public Slider experienceSlider;
     public Slider energySlider;
+    public Text level;
    
     void Update()
     {
@@ -17,6 +18,7 @@ public class StatsUI : MonoBehaviour
         RefillArmorPanel();
         RefillExperiencePanel();
         RefillEnergyPanel();
+        GetLevel();
     }
 
     private void RefillHealthPanel()
@@ -43,5 +45,10 @@ public class StatsUI : MonoBehaviour
         var maxEnergy = playerManager.GetMaxEnergy();
         var curEnergy = playerManager.GetEnergy();
         energySlider.value = curEnergy / maxEnergy;
+    }
+
+    private void GetLevel()
+    {
+        level.text = playerManager.GetLevel().ToString();
     }
 } 

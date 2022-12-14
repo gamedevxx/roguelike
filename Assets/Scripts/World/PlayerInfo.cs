@@ -21,7 +21,7 @@ public static class PlayerInfo
         private set
         {
             _experience = value;
-            int levelsAdded = Mathf.RoundToInt(_experience / ExpPerLevel);
+            int levelsAdded = Mathf.FloorToInt(_experience / ExpPerLevel);
             _level += levelsAdded;
             _experience -= ExpPerLevel * levelsAdded;
         }

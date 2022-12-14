@@ -45,4 +45,9 @@ public class PlayerManager : MonoBehaviour
     {
         return _playerEnergy.maxEnergy;
     }
+
+    public int GetLevel()
+    {
+        return PlayerInfo.Level;
+    }
 }
