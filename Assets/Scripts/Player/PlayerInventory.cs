@@ -9,6 +9,7 @@ public class PlayerInventory : MonoBehaviour
     private int[] inventory;
     private int size;
 
+    private int lastHandId = -1;
     private PlayerHandController handController;
 
     void Start()
@@ -20,6 +21,13 @@ public class PlayerInventory : MonoBehaviour
             inventory[i] = -1;
         }
         size = 0;
+    }
+
+    void Update()
+    {
+        if (lastHandId != -1 && handController.HandThingId == -1) {
+            SwapWithLast();
+        }
     }
 
     public void Put(int thing)
@@ -43,12 +51,26 @@ public class PlayerInventory : MonoBehaviour
     public void Swap(int id)
     {
         if (handController.HandThingId != -1) {
+            lastHandId = id;
             size++;
+        }
+        else {
+            lastHandId = -1;
         }
         if (inventory[id] != -1) {
             size--;
         }
         (inventory[id], handController.HandThingId) = (handController.HandThingId, inventory[id]);
+    }
+
+    public void SwapWithLast()
+    {
+        if (lastHandId == -1)
+        {
+            return;
+        }
+        Swap(lastHandId);
+        lastHandId = -1;
     }
     
     public void SetEmptyOn(int id)

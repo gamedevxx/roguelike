@@ -55,6 +55,7 @@ public class PlayerHandController : MonoBehaviour
             if (handThing.Activate(direction))
             {
                 HandThingId = -1;
+                
             }
         }
     }
