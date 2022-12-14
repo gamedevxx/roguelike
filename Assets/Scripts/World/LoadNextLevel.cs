@@ -19,6 +19,6 @@ public class LoadNextLevel : MonoBehaviour
             save.playerFreeLevels = PlayerInfo.AddedLevels;
             PlayerPrefs.SetString("Save" + activeId, JsonUtility.ToJson(save));
             SceneManager.LoadScene("Dungeon");
-    	}
+        }
     }
 }

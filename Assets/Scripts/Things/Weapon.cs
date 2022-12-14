@@ -18,6 +18,8 @@ public class Weapon : AbstractWeapon
     private float _lastActivationTime;
 
     private Vector3 _lastDirection;
+
+    private SpriteRenderer _renderer;
     
     private void Start()
     {
@@ -28,6 +30,8 @@ public class Weapon : AbstractWeapon
         playerWeaponEnchanter = GetComponentInParent<PlayerWeaponEnchanter>();
 
         _lastActivationTime = Time.time;
+
+        _renderer = GetComponent<SpriteRenderer>();
     }
 
     public override bool Activate(Vector3 direction)
@@ -36,6 +40,9 @@ public class Weapon : AbstractWeapon
         transform.position += direction * offset;
         transform.position -= _lastDirection * offset;
         _lastDirection = direction;
+
+        _renderer.flipX = !_renderer.flipX;
+
         if (_lastActivationTime + playerWeaponEnchanter.EnchantTimeout(timeout) > Time.time)
         {
             return false;

@@ -9,6 +9,7 @@ public static class PlayerInventory
     private static int size;
 
     private static int lastHandId = -1;
+    public static int handId = -1;
     public static PlayerHandController handController;
 
     static PlayerInventory()
@@ -33,6 +34,7 @@ public static class PlayerInventory
     {
         if (handController.HandThingId == -1)
         {
+            handId = thing;
             handController.HandThingId = thing;
         } else {
             for (int i = 0; i < InventorySize; i++)
@@ -60,6 +62,7 @@ public static class PlayerInventory
             size--;
         }
         (inventory[id], handController.HandThingId) = (handController.HandThingId, inventory[id]);
+        handId = handController.HandThingId;
     }
 
     public static void SwapWithLast()
@@ -83,6 +86,7 @@ public static class PlayerInventory
 
     public static void SetEmptyOnHand()
     {
+        handId = -1;
         handController.HandThingId = -1;
     }
 
@@ -103,6 +107,7 @@ public static class PlayerInventory
 
     public static void SetOnHand(int thing)
     {
+        handId = thing;
         handController.HandThingId = thing;
     }
 
@@ -144,5 +149,6 @@ public static class PlayerInventory
             inventory[i] = -1;
         }
         size = 0;
+        handId = -1;
     }
 }

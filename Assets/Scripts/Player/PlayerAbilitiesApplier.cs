@@ -78,10 +78,10 @@ public class PlayerAbilitiesApplier : MonoBehaviour
                     PlayerInfo.gainExperienceCoefficient *= 1.2f;
                     break;
                 case AbilityType.SpeedUp:
-                    _moveController.speed *= 1.05f;
+                    _moveController.speed *= 1.1f;
                     break;
                 case AbilityType.AdditionalArmor:
-                    _creatureBody.armor += 0.05f;
+                    _creatureBody.armor += 0.2f;
                     break;
                 case AbilityType.ExperienceFromThings:
                     ThingTag.experienceOnPickup += 5;
