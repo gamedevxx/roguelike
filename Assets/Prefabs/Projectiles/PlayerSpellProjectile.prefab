@@ -123,7 +123,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.1, y: 0}
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.4
 --- !u!50 &-3743179202686993167
 Rigidbody2D:
   serializedVersion: 4
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: 1, y: 0, z: 0}
   speed: 9
-  damage: 5
+  damage: 10
   enemyTag: Enemy
   effectDuration: 10
   effectStrength: 1

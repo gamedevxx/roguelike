@@ -71,7 +71,7 @@ public abstract class MoveController : MonoBehaviour
 
     private void Move()
     {
-        _rigidbody.velocity = speed * moveDirection;
+        _rigidbody.velocity = Mathf.Max(0, speed) * moveDirection;
     }
     
     private static string AnimationByState(MoveState state)

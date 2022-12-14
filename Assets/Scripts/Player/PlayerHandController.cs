@@ -32,6 +32,8 @@ public class PlayerHandController : MonoBehaviour
     {
         _thingObjectsList = GetComponent<ThingObjectsList>();
         PlayerInventory.handController = this;
+        HandThingId = -1;
+        PlayerInventory.Put(PlayerInventory.handId);
     }
     
     private void Update()

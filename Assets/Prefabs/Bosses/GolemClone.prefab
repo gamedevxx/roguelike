@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: -5960021904811667072}
   - component: {fileID: -592224639427441352}
   - component: {fileID: 717140991061941111}
+  - component: {fileID: 1218053758317607135}
   m_Layer: 6
   m_Name: GolemClone
   m_TagString: Enemy
@@ -283,3 +284,15 @@ MonoBehaviour:
   amount: 1
   probability: 0.01
   thingType: 1
+--- !u!114 &1218053758317607135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2342090470414414707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cb62413c26210101960aeaf6cc8946b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -159,7 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: 1, y: 0, z: 0}
   speed: 8
-  damage: 3
+  damage: 12
   enemyTag: Player
   effectDuration: 5
   effectStrength: 2

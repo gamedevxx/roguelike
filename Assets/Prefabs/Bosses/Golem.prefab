@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: -5840063625427777951}
   - component: {fileID: 1764427255196134995}
   - component: {fileID: -8113209848890960292}
+  - component: {fileID: -6365746856444101187}
   m_Layer: 6
   m_Name: Golem
   m_TagString: Enemy
@@ -235,7 +236,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94a1b9af0225204099360ed701c82a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  n_phase: -1
 --- !u!95 &7669027655711071211
 Animator:
   serializedVersion: 4
@@ -314,3 +314,15 @@ MonoBehaviour:
   amount: 2
   probability: 0.3
   thingType: 1
+--- !u!114 &-6365746856444101187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2342090470414414707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cb62413c26210101960aeaf6cc8946b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
