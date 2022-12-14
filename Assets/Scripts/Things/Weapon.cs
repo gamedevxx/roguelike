@@ -7,6 +7,8 @@ public class Weapon : AbstractWeapon
     
     public float timeout = 1.0f;
 
+    public float offset = 0.5f;
+
     protected PlayerWeaponEnchanter playerWeaponEnchanter;
     
     private List<CreatureEffectManager> _enemyList;
@@ -14,6 +16,8 @@ public class Weapon : AbstractWeapon
     private Animator _animator;
 
     private float _lastActivationTime;
+
+    private Vector3 _lastDirection;
     
     private void Start()
     {
@@ -28,6 +32,10 @@ public class Weapon : AbstractWeapon
 
     public override bool Activate(Vector3 direction)
     {
+        transform.rotation = Quaternion.FromToRotation(Vector3.down, direction);
+        transform.position += direction * offset;
+        transform.position -= _lastDirection * offset;
+        _lastDirection = direction;
         if (_lastActivationTime + playerWeaponEnchanter.EnchantTimeout(timeout) > Time.time)
         {
             return false;

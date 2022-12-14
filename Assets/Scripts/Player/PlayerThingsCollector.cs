@@ -6,8 +6,6 @@ using UnityEngine.Timeline;
 
 public class PlayerThingsCollector : MonoBehaviour
 {
-    public float pickupThingTimeout = 0.5f;
-
     private PlayerHandController _playerHandController;
     private PlayerInventory _playerInventory;
 
@@ -26,12 +24,10 @@ public class PlayerThingsCollector : MonoBehaviour
             return;
         }
 
-        StartCoroutine(PickupThingCoroutine(thing));
-    }
-
-    private IEnumerator PickupThingCoroutine(ThingTag thing)
-    {
-        yield return new WaitForSeconds(pickupThingTimeout);
+        if (_playerInventory.IsFull() && _playerHandController.HandThingId != -1) 
+        {
+            return;
+        }
 
         _playerInventory.Put(thing.Pickup());
     }

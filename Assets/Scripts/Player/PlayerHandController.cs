@@ -19,6 +19,7 @@ public class PlayerHandController : MonoBehaviour
             if (value != -1)
             {
                 handThing = Instantiate(_thingObjectsList.thingObjects[value], gameObject.transform);
+                handThing.transform.position += 0.5f * Vector3.up;
             }
             
             _handThingId = value;

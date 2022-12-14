@@ -35,13 +35,10 @@ public class InventoryUI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             isActive ^= 1;
-            if (isActive == 1)
-            {
-                RefreshGridAndHand();
-            }
         }
         if (isActive == 1)
         {
+            RefreshGridAndHand();
             grid.SetActive(isActive == 1);
             int slotId = getSlotId();
             if (slotId == -1)

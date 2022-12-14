@@ -42,6 +42,12 @@ public class PlayerInventory : MonoBehaviour
 
     public void Swap(int id)
     {
+        if (handController.HandThingId != -1) {
+            size++;
+        }
+        if (inventory[id] != -1) {
+            size--;
+        }
         (inventory[id], handController.HandThingId) = (handController.HandThingId, inventory[id]);
     }
     
