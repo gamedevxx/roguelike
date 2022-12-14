@@ -2,7 +2,7 @@ using UnityEngine;
 
 public static class PlayerInfo
 {
-    public const int ExpPerLevel = 100;
+    public const int ExpPerLevel = 1500;
     
     public static float gainExperienceCoefficient = 1;
     
