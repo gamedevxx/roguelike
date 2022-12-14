@@ -3,7 +3,11 @@ using System;
 [Serializable]
 public class Save
 {
-    public int id; // 0 1 2
+    public int saveId; // 0 1 2
     public string playerName;
-    public string playerNick;
+    public string playerMaxHealth;
+    public float playerArmor;
+    public int playerFreeLevels;
+    public int playerCurrentLevel;
+    public int[] playerAbilities;
 }
