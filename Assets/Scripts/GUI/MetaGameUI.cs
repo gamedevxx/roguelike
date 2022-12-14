@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class MetaGameUI : MonoBehaviour
 {
+    private bool wasEmpty = false;
+
     private AbilityIconsList icons;
 
     private int activeSaveId;
@@ -44,9 +46,19 @@ public class MetaGameUI : MonoBehaviour
         activeSaveId = PlayerPrefs.GetInt("active");
         activeSave = JsonUtility.FromJson<Save>(PlayerPrefs.GetString("Save" + activeSaveId));
 
-        activeSave = new Save();
-        activeSave.playerFreeLevels = 10;
-        activeSave.playerAbilities = new List<int>();
+        if (activeSave == null)
+        {
+            wasEmpty = true;
+            activeSave = new Save();
+            activeSave.playerAbilities = new List<int>();
+            activeSave.playerArmor = 0;
+            activeSave.playerCurrentLevel = 1;
+            activeSave.playerExperience = 0;
+            activeSave.playerFreeLevels = 1;
+            activeSave.playerMaxHealth = 500;
+            activeSave.playerName = NameGenerator.GenerateName();
+            activeSave.saveId = activeSaveId;
+        }
 
         getUIElements();
 
@@ -83,7 +95,8 @@ public class MetaGameUI : MonoBehaviour
     {
         healthText.text = "" + activeSave.playerMaxHealth;
         armorText.text = "" + ((int)activeSave.playerArmor * 100) + "%";
-        //...
+        experienceText.text = "" + (int)activeSave.playerExperience + "/" + PlayerInfo.ExpPerLevel;
+        nameLevel.text = activeSave.playerName + ", " + activeSave.playerCurrentLevel;
     }
 
     // Update is called once per frame
@@ -230,7 +243,13 @@ public class MetaGameUI : MonoBehaviour
 
     public void goBack()
     {
-        PlayerPrefs.SetString("" + activeSave.saveId, JsonUtility.ToJson(activeSave));
+        if (wasEmpty)
+        {
+            PlayerPrefs.SetString("" + activeSaveId, null);
+        } else
+        {
+            PlayerPrefs.SetString("" + activeSaveId, JsonUtility.ToJson(activeSave));
+        }
         PlayerPrefs.SetString("active", null);
         SceneManager.LoadScene("ChooseSave");
     }

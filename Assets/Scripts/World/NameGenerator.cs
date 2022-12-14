@@ -77,7 +77,7 @@ public static class NameGenerator
         "The Swordbreaker",
         "The Crazy Bear",
         "First Of Xeskeaton",
-        "Defender Of Castle Baswistan",
+        "Defender Of Baswistan",
         "The Souleater",
         "Dark Knight",
         "Bravest In The World",

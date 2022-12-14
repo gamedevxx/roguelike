@@ -29,7 +29,7 @@ public class ChooseSaveUI : MonoBehaviour
         }
 
         save2 = JsonUtility.FromJson<Save>(PlayerPrefs.GetString("" + 2));
-        if (save0 != null)
+        if (save2 != null)
         {
             var saveText = grid.transform.Find("Save" + 2).transform.Find("Text").gameObject;
             saveText.GetComponent<Text>().text = save2.playerName + ", " + save2.playerCurrentLevel;
