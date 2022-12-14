@@ -26,6 +26,8 @@ public class PlayerThingsCollector : MonoBehaviour
         {
             return;
         }
+        
+        Destroy(col.gameObject);
 
         PlayerInventory.Put(thing.Pickup());
     }
