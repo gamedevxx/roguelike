@@ -6,10 +6,12 @@ using UnityEngine;
 public class BossIdle : StateMachineBehaviour
 {
     private BossController _bossController;
+    private BigPhase _bigPhase;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.ResetTrigger("BackToIdle");
         _bossController = animator.GetComponent<BossController>();
+        _bigPhase = animator.GetComponent<BigPhase>();
     }
     
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -17,9 +19,10 @@ public class BossIdle : StateMachineBehaviour
 
         if (!_bossController.isStop)
         {
-            if (!_bossController.NotTooNear())
+            if (!_bossController.NotTooNear() && _bigPhase != null)
             {
                 _bossController.UpdateSprite();
+                
                 animator.SetTrigger("StartFight");
             }
             else if (_bossController.MovingCondition())
@@ -32,7 +35,10 @@ public class BossIdle : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.ResetTrigger("BackToIdle");
-        animator.ResetTrigger("StartFight");
+        if (_bigPhase != null)
+        {
+            animator.ResetTrigger("StartFight");
+        }
         animator.ResetTrigger(_bossController.movementTrigger);
     }
     

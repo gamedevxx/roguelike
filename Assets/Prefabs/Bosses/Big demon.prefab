@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armor: 0.4
-  maxHealth: 200
+  maxHealth: 300
   healthRegenerationSpeed: 0
   changeHealthImmunityProbability: 0
 --- !u!114 &-8101993275142222093
