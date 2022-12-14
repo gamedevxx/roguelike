@@ -11,7 +11,7 @@ public class PlayerHandController : MonoBehaviour
         get => _handThingId;
         set
         {
-            if (_handThingId != -1)
+            if (_handThingId != -1 && handThing != null)
             {
                 Destroy(handThing.gameObject);    
             }

@@ -25,6 +25,7 @@ public class PlayerInventory : MonoBehaviour
 
     public void Put(int thing)
     {
+        Debug.Log(thing);
         if (handThingId == -1)
         {
             handThingId = thing;

@@ -18,6 +18,11 @@ public class InventoryUI : MonoBehaviour
     {
         grid = GameObject.Find("Grid");
         hand = GameObject.Find("Hand");
+        for (int i = 0; i < 9; i++) {
+            var slot_selected_ = grid.transform.Find("Slot_" + i).gameObject;
+            var slot_selected_bg = slot_selected_.transform.Find("selected").gameObject;
+            slot_selected_bg.SetActive(false);
+        }
         playerInventory = FindObjectOfType<PlayerInventory>();
         thingsList = FindObjectOfType<ThingObjectsList>();
         thingsIcons = FindObjectOfType<ThingIconsList>();
@@ -48,12 +53,18 @@ public class InventoryUI : MonoBehaviour
                 if (selected == -1)
                 {
                     selected = slotId;
+                    var cur_slot = grid.transform.Find("Slot_" + slotId).gameObject;
+                    var cur_slot_selected_bg = cur_slot.transform.Find("selected").gameObject;
+                    cur_slot_selected_bg.SetActive(true);
                     return;
                 }
                 var slot_selected_ = grid.transform.Find("Slot_" + selected).gameObject;
                 var slot_selected_bg = slot_selected_.transform.Find("selected").gameObject;
+                slot_selected_bg.SetActive(false);
+
                 var new_slot = grid.transform.Find("Slot_" + slotId).gameObject;
-                slot_selected_bg.transform.SetParent(new_slot.transform, false);
+                var new_slot_selected_bg = new_slot.transform.Find("selected").gameObject;
+                new_slot_selected_bg.SetActive(true);
                 selected = slotId;
             } else
             {
