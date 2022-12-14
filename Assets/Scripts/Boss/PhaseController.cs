@@ -7,10 +7,7 @@ public class PhaseController : MonoBehaviour
     private BasePhase[] _phases;
     private CreatureBody _creatureBody;
 
-    private float time = 10f;
-    private float curr_time = 0f;
-
-    private int n_phase = -1;
+    private int _nPhase;
     void Start()
     {
         _phases = GetComponents<BasePhase>();
@@ -20,33 +17,26 @@ public class PhaseController : MonoBehaviour
     
     void Update()
     {
-        if (_creatureBody.Health <= _creatureBody.maxHealth * (1 - (n_phase + 1) / 3))
+        if (_creatureBody.Health <= _creatureBody.maxHealth - (_nPhase + 1) * (_creatureBody.maxHealth/_phases.Length))
         {
-            ++n_phase;
+            ++_nPhase;
             ChangePhase();
         }
-        // curr_time += Time.deltaTime;
-        // if (curr_time > 20)
-        // {
-        //     curr_time = 0;
-        //
-        //     ChangePhase();
-        // }
+        
     }
 
     public void ChangePhase()
     {
-        ++n_phase;
-        if (n_phase > 0)
+        if (_nPhase > 0)
         {
-            _phases[n_phase - 1].EndPhase();
-            _phases[n_phase - 1].enabled = false;
+            _phases[_nPhase - 1].EndPhase();
+            _phases[_nPhase - 1].enabled = false;
         }
 
-        if (n_phase < _phases.Length)
+        if (_nPhase < _phases.Length)
         {
-            _phases[n_phase].enabled = true;
-            _phases[n_phase].StartPhase();
+            _phases[_nPhase].enabled = true;
+            _phases[_nPhase].StartPhase();
             
         }
         else

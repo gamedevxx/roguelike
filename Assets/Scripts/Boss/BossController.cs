@@ -7,7 +7,7 @@ public class BossController : MonoBehaviour
     public float minDistance;
     public float speed;
     [NonSerialized]
-    public float z_rotation = 0f;
+    public float zRotation = 0f;
 
     [NonSerialized] public string movementTrigger = "StartRun";
     [NonSerialized] public bool isStop = false;
@@ -16,14 +16,12 @@ public class BossController : MonoBehaviour
     
     private Transform _player;
     private Rigidbody2D _rigidbody;
-    private Animator _animator;
     private SpriteRenderer _spriteRenderer;
     private Transform _transform;
     
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _transform = GetComponent<Transform>();
         _player = FindObjectOfType<PlayerTag>().transform;
@@ -87,7 +85,7 @@ public class BossController : MonoBehaviour
         bool cond = lookOnRight ? (direction.x < 0) : (direction.x > 0);
         if (direction.x != 0)
         {
-            float z = cond ? z_rotation : -z_rotation;
+            float z = cond ? zRotation : -zRotation;
 
             _transform.rotation = Quaternion.Euler(0.0f, 0.0f, z);
             _spriteRenderer.flipX = cond;

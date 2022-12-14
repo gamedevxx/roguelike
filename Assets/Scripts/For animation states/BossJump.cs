@@ -5,8 +5,8 @@ using UnityEngine;
 public class BossJump : StateMachineBehaviour
 {
     private BossController _bossController;
+    private JumpAttack _jumpAttack;
     private Vector3 _direction;
-    
     private Vector3 _position;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -14,29 +14,22 @@ public class BossJump : StateMachineBehaviour
         animator.ResetTrigger("StartJump");
         _bossController = animator.GetComponent<BossController>();
         _bossController.speed *= 4;
-        // _position = _bossController.PlayerPosition();
-        // _direction = _bossController.MovementDirection(_position);
+        _jumpAttack = animator.GetComponent<JumpAttack>();
+        _position = _bossController.PlayerPosition();
+        _direction = _bossController.MovementDirection(_position);
     }
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        _bossController.UpdateSprite();
         
-        if (_bossController.NotTooNear())
+        if (_bossController.NotTooNear(_position))
         {
-            _bossController.Move();
+            _bossController.Move(_direction);
         }
-        
-        // if (_bossController.NotTooNear(_position))
-        // {
-        //     _bossController.Move(_direction);
-        // }
-        // else
-        // {
-        //     animator.SetTrigger("BackToIdle");
-        // }
+
     }
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        _jumpAttack.DamagePlayer();
         _bossController.speed /= 4;
         animator.GetComponent<Rigidbody2D>().velocity = new Vector3(0,0,0);
         _bossController.isStop = false;

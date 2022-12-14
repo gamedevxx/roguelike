@@ -21,26 +21,16 @@ public class BigPhase : BasePhase
     
     void Start()
     {
-        this.enabled = false;
+        enabled = false;
     }
 
-    void Update()
-    {
-        _currTime += Time.deltaTime;
-        if (_currTime >= timeForJump && _bossController.InRadius(radius))
-        {
-            _currTime = 0.0f;
-            _bossController.isStop = true;
-            _animator.SetTrigger("BackToIdle");
-            _animator.SetTrigger("StartJump");
-        }
-    }
+
     public override void StartPhase()
     {
         _animator = GetComponent<Animator>();
         
         _bossController = GetComponent<BossController>();
-        _bossController.minDistance = 2;
+        _bossController.minDistance = 1;
         
         _bossController.isStop = true;
         _animator.SetTrigger("BackToIdle");

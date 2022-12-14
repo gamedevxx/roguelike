@@ -10,8 +10,8 @@ public class BerserkAttack : MonoBehaviour
     public float startAttackTimeout = 5;
     public float endAttackTimeout = 10;
     
-    private float _currTime = 0;
-    private bool _isBerserk = false;
+    private float _currTime;
+    private bool _isBerserk;
     void Start()
     {
         _animator = GetComponent<Animator>();
@@ -37,7 +37,7 @@ public class BerserkAttack : MonoBehaviour
         {
             if (_currTime > endAttackTimeout)
             {
-                _isBerserk = true;
+                _isBerserk = false;
                 _bossController.movementTrigger = "StartRun";
                 _animator.SetTrigger("BackToIdle");
                 _currTime = 0;

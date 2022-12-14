@@ -44,8 +44,15 @@ public class MultiplyDistantAttack : MonoBehaviour
         
         Vector3 toPlayer = (playerPos - pos).normalized;
         for (int i = 0; i != vectors.Length; ++i)
-        { 
-            vectors[i] = Quaternion.Euler(0, 0,rotationAngle * i) * toPlayer;
+        {
+            if (i % 2 == 0)
+            {
+                vectors[i] = Quaternion.Euler(0, 0, rotationAngle * i / 2) * toPlayer;
+            }
+            else
+            {
+                vectors[i] = Quaternion.Euler(0, 0, -rotationAngle * (i + 1) / 2) * toPlayer;
+            }
         }
 
         for (int i = 0; i != vectors.Length; ++i)
@@ -56,6 +63,9 @@ public class MultiplyDistantAttack : MonoBehaviour
                 Quaternion.FromToRotation(Vector3.right, vectors[i]));
 
             spawnedProjectile.direction = vectors[i].normalized;
+            Vector3 scale = spawnedProjectile.transform.localScale;
+            spawnedProjectile.transform.localScale = new Vector3(0.5f * scale.x, 
+                0.5f * scale.y, 1.0f);
         }
 
 

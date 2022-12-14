@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 74345666828622633}
   - component: {fileID: 7669027655711071211}
   - component: {fileID: 7539034516846653147}
-  - component: {fileID: 4395863139153253103}
   - component: {fileID: -5840063625427777951}
   - component: {fileID: 1764427255196134995}
   - component: {fileID: -8113209848890960292}
@@ -91,7 +90,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 50
   m_LinearDrag: 4
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -236,6 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94a1b9af0225204099360ed701c82a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  n_phase: -1
 --- !u!95 &7669027655711071211
 Animator:
   serializedVersion: 4
@@ -270,18 +270,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnedObject: {fileID: 2342090470414414707, guid: 86f17d1482d42b249bacd8a5b5125e36, type: 3}
   damage: 10
---- !u!114 &4395863139153253103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2342090470414414707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea4265633d93edd4ba33752b6f94713c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-5840063625427777951
 MonoBehaviour:
   m_ObjectHideFlags: 0

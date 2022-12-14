@@ -24,14 +24,14 @@ public class RollingPhase : BasePhase
     
     void Start()
     {
-        this.enabled = false;
+        enabled = false;
     }
     public override void StartPhase()
     {
         _animator = GetComponent<Animator>();
         
         _bossController = GetComponent<BossController>();
-        _bossController.minDistance = 2;
+        _bossController.minDistance = 1;
         
         _animator.SetTrigger("BackToIdle");
         

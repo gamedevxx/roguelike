@@ -161,4 +161,7 @@ MonoBehaviour:
   speed: 5
   damage: 10
   enemyTag: Player
+  effectDuration: 5
+  effectStrength: 5
+  effectType: 0
   maxlifetime: 5

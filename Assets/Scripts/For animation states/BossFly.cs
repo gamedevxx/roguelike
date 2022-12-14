@@ -13,7 +13,7 @@ public class BossFly : StateMachineBehaviour
         animator.ResetTrigger("StartFly");
         
         _bossController = animator.GetComponent<BossController>();
-        _bossController.z_rotation = 25f;
+        _bossController.zRotation = 25f;
 
         _flyingPhase = animator.GetComponent<FlyingPhase>();
         _flyingPhase.AddAttack();
@@ -32,7 +32,7 @@ public class BossFly : StateMachineBehaviour
     
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        _bossController.z_rotation = 0f;
+        _bossController.zRotation = 0f;
         animator.GetComponent<Transform>().rotation = Quaternion.Euler(0, 0, 0);
         _flyingPhase.RemoveAttack();
     }

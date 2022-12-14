@@ -15,7 +15,7 @@ public class SpawningPhase : BasePhase
     
     void Start()
     {
-        this.enabled = false;
+        enabled = false;
     }
     public override void StartPhase()
     {

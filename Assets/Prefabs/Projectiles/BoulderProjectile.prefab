@@ -161,6 +161,6 @@ MonoBehaviour:
   speed: 8
   damage: 3
   enemyTag: Player
-  effectDuration: 10
-  effectStrength: 1
+  effectDuration: 5
+  effectStrength: 2
   effectType: 0

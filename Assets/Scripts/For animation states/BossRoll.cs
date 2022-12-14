@@ -6,6 +6,7 @@ public class BossRoll : StateMachineBehaviour
 {
     private BossController _bossController;
     private Transform _transform;
+    private RollAttack _rollAttack;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _bossController = animator.GetComponent<BossController>();
@@ -13,7 +14,9 @@ public class BossRoll : StateMachineBehaviour
         
         _transform = animator.GetComponent<Transform>();
 
-        _transform.localScale = new Vector3(1.5f, 1.5f, 1.0f);
+        _transform.localScale = new Vector3(1.1f, 1.1f, 1.0f);
+        _rollAttack = animator.GetComponent<RollAttack>();
+        ++_rollAttack.currRollAttack;
     }
     
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

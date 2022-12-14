@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,15 @@ public class RollAttack : MonoBehaviour
     public float attackTimeout = 1;
     
     private float _lastAttackTime;
-    private bool _isRoll = false;
+    private bool _isRoll;
+
+    public int countOfRollAttack = 10;
+    
+    [NonSerialized]
+    public int currRollAttack;
+
+    public float rollTime = 7;
+    private float _currRollTime;
     
     private void Start()
     {
@@ -22,22 +31,32 @@ public class RollAttack : MonoBehaviour
 
     private void Update()
     {
-        if (_isRoll)
+        if (_isRoll && currRollAttack > countOfRollAttack)
         {
-            return;
+            _currRollTime += Time.deltaTime;
+            if (_currRollTime > rollTime)
+            {
+                EndRoll();
+            }
         }
-        if (_lastAttackTime + attackTimeout > Time.time)
+
+        if (_isRoll || _lastAttackTime + attackTimeout > Time.time)
         {
             return;
         }
 
-        _isRoll = true;
-        _bossController.movementTrigger = "StartRoll";
-        _animator.SetTrigger("BackToIdle");
+        StartRoll();
     }
-    private void OnTriggerStay2D(Collider2D col)
+
+
+
+    private void OnTriggerEnter2D(Collider2D col)
     {
         if (!col.gameObject.CompareTag("Env") && !col.gameObject.CompareTag("Player"))
+        {
+            return;
+        }
+        if (col.gameObject.CompareTag("Env") && currRollAttack > countOfRollAttack)
         {
             return;
         }
@@ -46,6 +65,7 @@ public class RollAttack : MonoBehaviour
             return;
         }
         
+        
         PlayerTag player = col.gameObject.GetComponent<PlayerTag>();
 
         if (player != null)
@@ -53,11 +73,42 @@ public class RollAttack : MonoBehaviour
             CreatureBody playerBody = player.GetComponent<CreatureBody>();
             playerBody.Damage(damage);
         }
+        
 
-        _isRoll = false;
+        if (currRollAttack > countOfRollAttack)
+        {
+            EndRoll();
+        }
+        else
+        {
+            StartRoll();
+        }
+    }
+    
+
+
+    private void StartRoll()
+    {
+
+        _isRoll = true;
+        if (currRollAttack == countOfRollAttack)
+        {
+            _bossController.movementTrigger = "StartRoll";
+        }
+        else
+        {
+            _bossController.movementTrigger = "StartSimpleRoll";
+        }
+        _animator.SetTrigger("BackToIdle");
+    }
+
+    private void EndRoll()
+    {
+        _currRollTime = 0;
+        currRollAttack = 0;
+        _lastAttackTime = Time.time;
         _bossController.movementTrigger = "StartRun";
         _animator.SetTrigger("BackToIdle");
-
-        _lastAttackTime = Time.time;
+        _isRoll = false;
     }
 }

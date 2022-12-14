@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HomingProjectile : Projectile
+public class HomingProjectile : ProjectileWithEffect
 {
     public float maxlifetime = 5;
     private Transform _player;

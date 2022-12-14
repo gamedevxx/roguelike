@@ -18,7 +18,7 @@ public class BerserkPhase : BasePhase
     
     void Start()
     {
-        this.enabled = false;
+        enabled = false;
     }
     
     public override void StartPhase()

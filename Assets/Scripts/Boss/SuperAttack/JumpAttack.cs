@@ -10,13 +10,13 @@ public class JumpAttack : MonoBehaviour
     public float radius = 5;
     public float timeForJump = 5;
 
-    private float _currTime = 0.0f;
+    private float _currTime;
     
     private CreatureBody _playerBody;
     private CreatureEffectManager _playerEffectManager;
     
-    public float effectDuration = 10;
-    public float effectStrength = 1;
+    public float effectDuration = 5;
+    public float effectStrength = 2;
     public CreatureEffectManager.EffectType effectType = CreatureEffectManager.EffectType.Freeze;
     void Start()
     {
@@ -36,12 +36,13 @@ public class JumpAttack : MonoBehaviour
         {
             _currTime = 0.0f;
             _bossController.isStop = true;
-            _animator.SetTrigger("BackToIdle");
             _animator.SetTrigger("StartJump");
+            _animator.SetTrigger("BackToIdle");
+            
         }
     }
 
-    void DamagePlayer()
+    public void DamagePlayer()
     {
         if (_bossController.InRadius(radius))
         {

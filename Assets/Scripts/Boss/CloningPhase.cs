@@ -15,7 +15,7 @@ public class CloningPhase : BasePhase
     
     void Start()
     {
-        this.enabled = false;
+        enabled = false;
     }
     public override void StartPhase()
     {

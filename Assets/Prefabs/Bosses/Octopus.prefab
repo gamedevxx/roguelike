@@ -59,7 +59,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 50
   m_LinearDrag: 4
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a8c0482fd9fa84297d2b2a7415d546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRange: 7
+  viewRange: 10
   minDistance: 1
   speed: 3
   lookOnRight: 0
@@ -283,7 +283,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 1604353113624581253, guid: 8c169a436f34d02469ee60172ca4b0b5, type: 3}
+  fastProjectile: {fileID: -5363686165986893660, guid: 39b9a48bd781056458e7540f27bb8dd5, type: 3}
   damage: 10
+  distantTimeOut: 15
+  fastDistantTimeOut: 7
+  minDistance: 7
 --- !u!114 &-744691827761971957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,7 +302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meleeDamage: 15
   rollDamage: 30
-  rollTimeout: 5
+  rollTimeout: 10
   poisonTimeout: 5
   projectile: {fileID: -5363686165986893660, guid: 39b9a48bd781056458e7540f27bb8dd5, type: 3}
   countOfProjectiles: 12

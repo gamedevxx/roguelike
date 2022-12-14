@@ -2,32 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossFight2 : StateMachineBehaviour
+public class BossSimpleRoll : StateMachineBehaviour
 {
     
     private BossController _bossController;
-    private MonsterMeleeAttack _meleeAttack;
+    private Vector3 _direction;
+    private RollAttack _rollAttack;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
         _bossController = animator.GetComponent<BossController>();
-        _meleeAttack = animator.GetComponent<MonsterMeleeAttack>();
-        _meleeAttack.damage *= 2;
+        _bossController.speed *= 4;
+        _direction = _bossController.MovementDirection();
+        _rollAttack = animator.GetComponent<RollAttack>();
+        ++_rollAttack.currRollAttack;
     }
     
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        _bossController.UpdateSprite();
         
-        if (_bossController.NotTooNear())
-        {
-            animator.SetTrigger("BackToIdle");
-        }
+        _bossController.Move(_direction);
     }
-
+    
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        _meleeAttack.damage /= 2;
-        animator.ResetTrigger("BackToIdle");
+        _bossController.speed /= 4;
     }
+    
 }
