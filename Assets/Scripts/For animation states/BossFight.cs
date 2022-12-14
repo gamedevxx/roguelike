@@ -10,7 +10,7 @@ public class BossFight : StateMachineBehaviour
     {
         _transform = animator.GetComponent<Transform>();
         _transform.localScale = new Vector3(1.5f, 1.5f, 1.0f);
-        animator.ResetTrigger("StartFight");
+        animator.ResetTrigger("StartBerserk");
         _bossController = animator.GetComponent<BossController>();
         _bossController.speed *= 2;
     }
