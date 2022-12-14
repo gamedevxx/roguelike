@@ -62,6 +62,9 @@ public class PlayerAbilitiesApplier : MonoBehaviour
         _playerWeaponEnchanter = GetComponent<PlayerWeaponEnchanter>();
         _light2D = GetComponent<Light2D>();
 
+        _creatureBody.maxHealth = save.playerMaxHealth;
+        _creatureBody.armor = save.playerArmor;
+
         var abilities = GetAbilities(save.playerAbilities);
         ApplyAbilities(abilities);
     }
@@ -95,13 +98,13 @@ public class PlayerAbilitiesApplier : MonoBehaviour
                 case AbilityType.TemporaryPlayerArmor:
                     _creatureEffectManager.AddEffect(
                         new CreatureEffectManager.Effect(
-                                120,
+                                60,
                                 0.3f,
                                 CreatureEffectManager.EffectType.Armor
                             ));
                     break;
                 case AbilityType.Regeneration:
-                    _creatureBody.healthRegenerationSpeed += 0.05f;
+                    _creatureBody.healthRegenerationSpeed += 10;
                     break;
                 case AbilityType.AdditionalHealth:
                     _creatureBody.maxHealth *= 1.2f;
@@ -110,28 +113,28 @@ public class PlayerAbilitiesApplier : MonoBehaviour
                     _creatureEffectManager.effectsCanBeApplied = false;
                     break;
                 case AbilityType.MeleeDamageIncrease:
-                    _playerWeaponEnchanter.additionalMeleeDamage += 1.2f;
+                    _playerWeaponEnchanter.additionalMeleeDamage += 5;
                     break;
 
                 ///////
 
                 case AbilityType.Vampirism:
-                    _playerWeaponEnchanter.vampirismCoefficient += 0.1f;
+                    _playerWeaponEnchanter.vampirismCoefficient += 0.2f;
                     break;
                 case AbilityType.DamageIncrease:
-                    _playerWeaponEnchanter.additionalMeleeDamage += 0.7f;
-                    _playerWeaponEnchanter.additionalDistantDamage += 0.7f;
+                    _playerWeaponEnchanter.additionalMeleeDamage += 3;
+                    _playerWeaponEnchanter.additionalDistantDamage += 3;
                     break;
                 case AbilityType.TemporaryBlееding:
                     _playerWeaponEnchanter.addedEffects.Add(
                         new CreatureEffectManager.Effect(
-                                5,
+                                10,
                                 1,
                                 CreatureEffectManager.EffectType.Damage
                             ));
                     break;
                 case AbilityType.CriticalDamageProbability:
-                    _playerWeaponEnchanter.criticalDamageProbability += 0.05f;
+                    _playerWeaponEnchanter.criticalDamageProbability += 0.1f;
                     break;
                 case AbilityType.CriticalDamageCoefficientIncrease:
                     _playerWeaponEnchanter.criticalDamageCoefficient *= 1.5f;
@@ -143,13 +146,13 @@ public class PlayerAbilitiesApplier : MonoBehaviour
                     _playerWeaponEnchanter.timeoutCoefficient *= 0.9f;
                     break;
                 case AbilityType.ChangeHealthImmunityProbability: // ??
-                    _creatureBody.changeHealthImmunityProbability = 0.1f;
+                    _creatureBody.changeHealthImmunityProbability = 0.2f;
                     break;
                 case AbilityType.EffectImmunityProbability: // ??
-                    _creatureEffectManager.immunityProbability += 0.25f;
+                    _creatureEffectManager.immunityProbability += 0.2f;
                     break;
                 case AbilityType.DistantDamageIncrease:
-                    _playerWeaponEnchanter.additionalDistantDamage += 1.2f;
+                    _playerWeaponEnchanter.additionalDistantDamage += 5;
                     break;
                 case AbilityType.IncreasedSightRange:
                     _light2D.pointLightInnerRadius *= 1.1f;
@@ -168,7 +171,7 @@ public class PlayerAbilitiesApplier : MonoBehaviour
                     _playerWeaponEnchanter.addedEffects.Add(
                         new CreatureEffectManager.Effect(
                                 3,
-                                -0.05f,
+                                -0.1f,
                                 CreatureEffectManager.EffectType.Armor
                             ));
                     break;
@@ -187,7 +190,7 @@ public class PlayerAbilitiesApplier : MonoBehaviour
                     _playerWeaponEnchanter.addedEffects.Add(
                         new CreatureEffectManager.Effect(
                             120,
-                            0.2f,
+                            0.5f,
                             CreatureEffectManager.EffectType.Damage
                         ));
                     break;

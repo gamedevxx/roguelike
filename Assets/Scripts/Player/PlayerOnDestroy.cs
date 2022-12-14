@@ -18,6 +18,7 @@ public class PlayerOnDestroy : MonoBehaviour
             // save stats
             // if hp <= 0 -> meta game
             // else -> next level + save stats
+            Camera.main.transform.SetParent(null);
             int activeId = PlayerPrefs.GetInt("active");
             Save save = JsonUtility.FromJson<Save>(PlayerPrefs.GetString("Save" + activeId));
             save.playerCurrentLevel = PlayerInfo.Level;

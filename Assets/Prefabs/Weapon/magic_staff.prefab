@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49f5b9ec08e04168b33a3481c6d9e043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeout: 0.35
+  timeout: 0.3
   projectile: {fileID: -5363686165986893660, guid: 534bffa197feb943aa756c216901ba98, type: 3}
   spawnDistance: 0.6
   spawnOffset: {x: 0, y: 0.3, z: 0}

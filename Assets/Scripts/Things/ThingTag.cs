@@ -7,9 +7,14 @@ public class ThingTag : MonoBehaviour
     public static float experienceOnPickup = 0;
 
     private bool _isDestroyed;
-    
+
     public int Pickup()
     {
+        if (_isDestroyed)
+        {
+            return -1;
+        }
+
         _isDestroyed = true;
         
         PlayerInfo.GainExperience(experienceOnPickup);

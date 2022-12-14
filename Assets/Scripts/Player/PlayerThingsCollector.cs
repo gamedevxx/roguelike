@@ -26,10 +26,14 @@ public class PlayerThingsCollector : MonoBehaviour
         {
             return;
         }
-        
-        Destroy(col.gameObject);
 
-        PlayerInventory.Put(thing.Pickup());
+        int id = thing.Pickup();
+        if (id == -1)
+        {
+            return;
+        }
+
+        PlayerInventory.Put(id);
     }
 }
 

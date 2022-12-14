@@ -497,11 +497,11 @@ GameObject:
   - component: {fileID: 225304369}
   m_Layer: 7
   m_Name: Main Camera
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6845181612862981328
 Transform:
   m_ObjectHideFlags: 0
