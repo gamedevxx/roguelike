@@ -12,7 +12,13 @@ public class LoadNextLevel : MonoBehaviour
 	    }
 
 	    if (other.CompareTag("Player")) {
-    		SceneManager.LoadScene("Dungeon");
+            int activeId = PlayerPrefs.GetInt("active");
+            Save save = JsonUtility.FromJson<Save>(PlayerPrefs.GetString("Save" + activeId));
+            save.playerCurrentLevel = PlayerInfo.Level;
+            save.playerExperience = PlayerInfo.Experience;
+            save.playerFreeLevels = PlayerInfo.AddedLevels;
+            PlayerPrefs.SetString("Save" + activeId, JsonUtility.ToJson(save));
+            SceneManager.LoadScene("Dungeon");
     	}
     }
 }

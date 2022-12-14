@@ -14,21 +14,21 @@ public class ChooseSaveUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        save0 = JsonUtility.FromJson<Save>(PlayerPrefs.GetString("" + 0));
+        save0 = JsonUtility.FromJson<Save>(PlayerPrefs.GetString("Save" + 0));
         if (save0 != null)
         {
             var saveText = grid.transform.Find("Save" + 0).transform.Find("Text").gameObject;
             saveText.GetComponent<Text>().text = save0.playerName + ", " + save0.playerCurrentLevel;
         }
 
-        save1 = JsonUtility.FromJson<Save>(PlayerPrefs.GetString("" + 1));
+        save1 = JsonUtility.FromJson<Save>(PlayerPrefs.GetString("Save" + 1));
         if (save1 != null)
         {
             var saveText = grid.transform.Find("Save" + 1).transform.Find("Text").gameObject;
             saveText.GetComponent<Text>().text = save1.playerName + ", " + save1.playerCurrentLevel;
         }
 
-        save2 = JsonUtility.FromJson<Save>(PlayerPrefs.GetString("" + 2));
+        save2 = JsonUtility.FromJson<Save>(PlayerPrefs.GetString("Save" + 2));
         if (save2 != null)
         {
             var saveText = grid.transform.Find("Save" + 2).transform.Find("Text").gameObject;

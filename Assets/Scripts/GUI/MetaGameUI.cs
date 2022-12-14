@@ -170,6 +170,17 @@ public class MetaGameUI : MonoBehaviour
         {
             earnThemByFightingText.SetActive(false);
             grid.SetActive(true);
+            for (int i = 0; i < activeSave.playerAbilities.Count; i++)
+            {
+                var abilityId = activeSave.playerAbilities[i];
+                var slot = grid.transform.Find("ability" + i).GetComponent<Image>();
+                slot.sprite = icons.abilityIcons[abilityId];
+                slot.gameObject.SetActive(true);
+            }
+            for (int i = activeSave.playerAbilities.Count; i < 24; i++)
+            {
+                grid.transform.Find("ability" + i).gameObject.SetActive(false);
+            }
         }
     }
 
@@ -237,7 +248,9 @@ public class MetaGameUI : MonoBehaviour
 
     public void goFight()
     {
-        PlayerPrefs.SetString("active", JsonUtility.ToJson(activeSave));
+        PlayerPrefs.SetString("Save" + activeSaveId, JsonUtility.ToJson(activeSave));
+        PlayerPrefs.SetInt("active", activeSaveId);
+        PlayerInventory.Clear();
         SceneManager.LoadScene("Dungeon");
     }
 
@@ -245,12 +258,12 @@ public class MetaGameUI : MonoBehaviour
     {
         if (wasEmpty)
         {
-            PlayerPrefs.SetString("" + activeSaveId, null);
+            PlayerPrefs.SetString("Save" + activeSaveId, null);
         } else
         {
-            PlayerPrefs.SetString("" + activeSaveId, JsonUtility.ToJson(activeSave));
+            PlayerPrefs.SetString("Save" + activeSaveId, JsonUtility.ToJson(activeSave));
         }
-        PlayerPrefs.SetString("active", null);
+        PlayerPrefs.DeleteKey("active");
         SceneManager.LoadScene("ChooseSave");
     }
 }

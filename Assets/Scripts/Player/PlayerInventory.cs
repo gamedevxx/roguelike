@@ -135,4 +135,14 @@ public static class PlayerInventory
     {
         return size == InventorySize;
     }
+
+    public static void Clear()
+    {
+        inventory = new int[InventorySize];
+        for (int i = 0; i < InventorySize; i++)
+        {
+            inventory[i] = -1;
+        }
+        size = 0;
+    }
 }

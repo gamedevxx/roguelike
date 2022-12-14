@@ -100,8 +100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4744eb9ebf014ec99c79586e301789d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 8
+  damage: 10000
   timeout: 0.25
+  offset: 0.5
 --- !u!95 &3414639810332714389
 Animator:
   serializedVersion: 4
@@ -239,6 +240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   timeout: 0.2
+  offset: 0.5
 --- !u!95 &6453799727661089605
 Animator:
   serializedVersion: 4

@@ -47,7 +47,8 @@ public class PlayerAbilitiesApplier : MonoBehaviour
 
     private void Awake()
     {
-        var save = JsonUtility.FromJson<Save>(PlayerPrefs.GetString("active"));
+        var activeId = PlayerPrefs.GetInt("active");
+        var save = JsonUtility.FromJson<Save>(PlayerPrefs.GetString("Save" + activeId));
 
         PlayerInfo.ResetLevel();
         PlayerInfo.GainExperience(save.playerExperience);
