@@ -7,12 +7,19 @@ public static class PlayerInfo
     public static float gainExperienceCoefficient = 1;
     
     private static int _level = 1;
+    private static int _addedLevels = 0;
     private static float _experience;
 
     public static int Level
     {
         get => _level;
         set => _level = value;
+    }
+
+    public static int AddedLevels
+    {
+        get => _addedLevels;
+        set => _addedLevels = value;
     }
 
     public static float Experience
@@ -23,6 +30,7 @@ public static class PlayerInfo
             _experience = value;
             int levelsAdded = Mathf.FloorToInt(_experience / ExpPerLevel);
             _level += levelsAdded;
+            _addedLevels += levelsAdded;
             _experience -= ExpPerLevel * levelsAdded;
         }
     }
@@ -36,5 +44,6 @@ public static class PlayerInfo
     {
         _level = 0;
         _experience = 0;
+        _addedLevels = 0;
     }
 }

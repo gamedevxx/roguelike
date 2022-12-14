@@ -48,8 +48,11 @@ public class PlayerAbilitiesApplier : MonoBehaviour
     private void Awake()
     {
         var save = JsonUtility.FromJson<Save>(PlayerPrefs.GetString("active"));
+
+        PlayerInfo.ResetLevel();
         PlayerInfo.GainExperience(save.playerExperience);
         PlayerInfo.Level = save.playerCurrentLevel;
+        PlayerInfo.AddedLevels = 0;
 
         _creatureBody = GetComponent<CreatureBody>();
         _creatureEffectManager = GetComponent<CreatureEffectManager>();
