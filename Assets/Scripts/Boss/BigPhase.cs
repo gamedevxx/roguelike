@@ -16,8 +16,7 @@ public class BigPhase : BasePhase
     public float damage = 10;
     public float radius = 5;
     public float timeForJump = 5;
-
-    private float _currTime = 0.0f;
+    
     
     void Start()
     {
